@@ -1,3 +1,6 @@
+NB: ship sprites are not original, and are placeholders only. Please do not distribute this work-in-progress plug-in in this condition.
+
+
 # Trin Enhancement for Endless Sky
 
 ## The Trin
