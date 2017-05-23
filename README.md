@@ -1,3 +1,5 @@
+NB: this is very much a work-in-progress branch. Updates pushed to this are mostly for online back-up at this stage, and may not be ready for feedback. I'll push clean updates to master.
+
 # Trin Enhancement for Endless Sky
 
 ## The Trin
