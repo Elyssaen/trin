@@ -1,0 +1,642 @@
+
+
+###############################################################################
+# RAID MISSIONS                                                               #
+###############################################################################	
+
+# Quarg fleet sent to deal with a Trin raid.
+fleet "Quarg Reinforcement"
+	government "Quarg"
+	names "quarg"
+	personality
+		heroic vindictive
+	variant
+		"Quarg Wardragon" 4
+	variant
+		"Quarg Wardragon" 3
+
+# Hai Raids
+mission "Trin Kagriri Raid the Hai"
+	deadline 1
+	invisible
+	repeat
+	landing
+	to offer
+		random <= 4
+	source
+		attributes "hai" "unfettered"
+	npc
+		government Trin
+		personality heroic frugal entering staying mute
+		fleet "Trin Kagriri Raid"
+	npc
+		government Quarg
+		system "Hevru Hai"
+		fleet "Quarg Reinforcement"
+		
+mission "Trin Destanu Raid the Hai"
+	deadline 1
+	invisible
+	repeat
+	landing
+	to offer
+		random <= 4
+	source
+		attributes "hai" "unfettered"
+	npc kill
+		government Trin
+		personality heroic vindictive entering staying mute
+		fleet "Trin Destanu Raid"
+	npc
+		government Quarg
+		system "Hevru Hai"
+		personality heroic
+		fleet "Quarg Reinforcement"	
+	
+# Efreti Raids
+mission "Trin Kagriri Raid the Efreti"
+	deadline 1
+	invisible
+	repeat
+	landing
+	to offer
+		random <= 4
+	source
+		near "Sevrelect" 0 4
+	npc kill
+		government Trin
+		personality heroic frugal entering staying mute
+		fleet "Trin Kagriri Raid"	
+	npc
+		government Quarg
+		system "Dokdobaru"
+		fleet "Quarg Reinforcement"
+
+		
+mission "Trin Maru Raid the Efreti"
+	deadline 1
+	invisible
+	repeat
+	landing
+	to offer
+		random <= 4
+	source
+		near "Sevrelect" 0 4
+	npc kill
+		government Trin
+		personality heroic unconstrained entering staying mute
+		fleet "Trin Maru Raid"	
+	npc
+		government Quarg
+		system "Dokdobaru"
+		fleet "Quarg Reinforcement"
+
+		
+# Korath Automata Raids	
+mission "Trin Kagriri Raid the Korath"
+	deadline 1
+	invisible
+	repeat
+	landing
+	to offer
+		random <= 7
+	source
+		near "Mesuket" 0 4
+	npc kill
+		government Trin
+		personality heroic frugal entering staying mute
+		fleet "Trin Kagriri Raid"	
+
+		
+mission "Trin Maru Raid the Korath"
+	deadline 1
+	invisible
+	repeat
+	landing
+	to offer
+		random <= 7
+	source
+		near "Mesuket" 0 4
+	npc kill
+		government Trin
+		personality heroic unconstrained entering staying mute
+		fleet "Trin Maru Raid"	
+		
+		
+# Wanderer Raids: Note that the Trin do not raid while the Pug are actively defending Ap'arak. Presumably this condition won't eventually be permanent, but in 0.9.5 it currently is. This is to prevent a Trin raid from destroying the two Arfectas defending Ap'arak, however unlikely that is. You should just assume that while the Pug are holding Ap'arak, they're also actively pre-emptively dealing with any Trin.
+mission "Trin Lranu Raid the Wanderers"
+	deadline 1
+	invisible
+	repeat
+	landing
+	to offer
+		and
+			random <= 4
+			not "Wanderers Ap'arak 3: Pug: active"
+	source
+		attributes "wanderer"
+	npc kill
+		government Trin
+		personality heroic plunders entering staying mute
+		fleet "Trin Lranu Raid"	
+
+		
+mission "Trin Destanu Raid the Wanderers"
+	deadline 1
+	invisible
+	repeat
+	landing
+	to offer
+		and
+			random <= 4
+			not "Wanderers Ap'arak 3: Pug: active"
+	source
+		attributes "wanderer"
+	npc kill
+		government Trin
+		personality heroic vindictive entering staying mute
+		fleet "Trin Destanu Raid"			
+		
+
+###############################################################################
+# HAI RESEARCH                                                                #
+###############################################################################	
+
+#0: Repeatable Hai missions hunting the Trin at high enough combat rating, and after proper first contact with the Hai.
+
+#1: Board a pre-disabled Trin Piranha. Vindictive Quarg interference makes it easy to fail, but both outcomes continue the arc.
+
+#2: Capture a Trin Piranha.
+
+# Quarg Interlude: Meet a representative of the Quarg warning you not to get involved with the Trin matter.
+
+#3: Travel to another system to pick up passengers to join the research team.
+
+#4: Investigate a system (requires a Jump Drive) where Trin raids may originate from. (Will find nothing.)
+
+#5: Return to the system to place a sensor array.
+
+#6: Return to the Hai.
+
+#7: Scan a Trin Chimaera detected in aforementioned system.
+
+#8: Board a Trin Chimaera and obtain a Chimaera Black Box.
+
+#9: A set of similar missions to loot: a Trin Ramscoop, an Etheric Web, a Strangelet Cell, one larger Strangelet reactor, and a Stasis Chamber. Sell to research team. The reactor path gives access to Strangelet Adapters.
+
+#10: Board a mysteriously poorly armed Trin ship (a Cachalot) that may be a freighter, to work out why the Trin are occasionally sending ships not configured as warships to raid. Mission will end with the research team being shut down due to Quarg interference.
+
+
+###############################################################################
+# MEBSUTA HIVE                                                                #
+###############################################################################	
+
+#1:  Start in Featherweight, asked to recruit someone to investigate strange tectonic activity on an uninhabited world in Mebsuta.
+
+#2: Collect scanning equipment from the Deep.
+
+#3: Take the team to the uninhabited planet in the system.
+
+#4: Protect the team from a pirate raid. A Trin Raja or two will flee, and if possible take off from the planet as you do.
+
+#5: Speak to the Navy at Farpoint to ask if they have any information about the strange ships seen.
+
+#6: The Navy aren't familiar with the strange ships, except that one of the two was seen heading to Rigel. The other was reported destroyed in Alheka. Head to Rigel, where you'll find a graveyard of disabled pirates, merchants and Navy ships, and have to beat the (hostile) Raja.
+
+#7: Admiral Danforth would like to reinforce Mebsuta with Navy presence, but it would be politically unpopular with Parliament lobby groups. He's sending communiques to the Parliament, to the Deep and the Quarg, but concludes the best approach is to launch a raid on Freedom/Almaaz to win a political victory and force northern pirates on the back foot, allowing for a fleet deployment to Mebsuta immediately after. Join the raid.
+
+#8: Return from the raid to Farpoint.
+
+#9: Head on to Mebsuta. Asked mid-way to land at Prime/Betelgeuse, on hearing that far more alien ships have appeared in Mebsuta and have wiped out the Featherweight colonies.
+
+#10: Two Quarg Wardragons were reported to have showed up at Mirzam but were destroyed. The aliens are attacking Prime: the Navy reinforcements, and you, need to fend them off.
+
+#11: Move on to Mebsuta in a suicide mission to try to rescue the survivors on Featherweight from alien bombardment. The Drak will show up and destroy the aliens (Trin) single-handedly. Heavy Quarg presence will show up elsewhere to deal with Trin stragglers.
+
+#11B: Alternatively, reinforce the Navy's position in Splashdown/Canopus, helping fend off a second Trin force being resisted with Quarg help. Hear about the events at Mebsuta second-hand.
+
+#11B.2: Head on to Mebsuta to see what happened.
+
+#12: Return to Alnitak with Admiral Danforth and the Navy/Oathkeeper forces. Debrief.
+
+
+###############################################################################
+# WANDERER DEFENCE                                                            #
+###############################################################################	
+
+#1: Repeating, help join a Wanderer fleet to fight off the Trin.
+
+#2: As you have a Jump Drive, the Wanderers ask you to ask other species about the Trin. Has to link into the Hai string intelligently at any point. Leads to talking to the Quarg.
+
+# Pug Interlude 1: after the above, can speak to the Pug about the Trin.
+
+# Pug Interlude 2: randomly, once, on landing on the Pug Iyuk world, the Pug are attacked by the Trin. Arfectas are launched to fend them off and you can get a little more information.
+
+#3: (south of Wanderer space) There's an increase in Trin raiding nearby. The Wanderers have noticed these trends and are concerned that, with their knowledge now of human space just to the south and with the Trin having Shunt Drives, the raid may reach human space. Go investigate the pirate systems south and use a scanner to detect any residue of Trin movement.
+
+#4 etc. (this is the only arc where you actually have to directly defeat a Trin fleet without something like Archons coming to save the day)
+
+
+###############################################################################
+# TRIN QUEEN                                                                  #
+###############################################################################	
+
+#1: bring the Trin Queen a quantity of Trin Wellstone.
+mission "Assist the Surviving Trin 1"
+	name "Acquire 50 Trin Wellstone"
+	description ""
+	landing
+	to offer
+		and
+			has "Wanderers: Alpha Surveillance G: done"
+			has "tech: trin"
+	source "Avalon"	
+
+	on offer
+		conversation
+			`Placeholder.`
+			
+	on accept
+		conversation
+			`Placeholder.`		
+
+	on decline
+		conversation
+			`Placeholder.`		
+			
+	on complete
+		"Trin Wellstone" -50
+		conversation
+			`Placeholder.`
+
+
+		
+#1B: ask the Quarg advice about the surviving Trin.
+mission "Tell the Quarg about the Trin"
+	name "Tell the Quarg about the Trin"
+
+	
+#2: bring the Trin Queen a Stasis Chamber.
+mission "Assist the Surviving Trin 2"
+	name "Acquire a Stasis Chamber"
+	description ""
+	landing
+	to offer
+		has "Assist the Surviving Trin 1: done"
+	destination "Avalon"	
+
+	on offer
+		conversation
+			`Placeholder.`
+			
+	on accept
+		conversation
+			`Placeholder.`		
+
+	on decline
+		conversation
+			`Placeholder.`		
+			
+	on complete
+		"Stasis Chamber" -1
+		conversation
+			`Placeholder.`
+
+			
+#3: bring the Trin Queen a Trin Fabricator.
+mission "Assist the Surviving Trin 3"
+	name "Locate a Trin Fabricator"
+	description ""
+	landing
+	to offer
+		has "Assist the Surviving Trin 2: done"
+	destination "Avalon"	
+
+	on offer
+		conversation
+			`Placeholder.`
+				accept
+			
+	on accept
+		conversation
+			`Placeholder.`		
+
+	on decline
+		conversation
+			`Placeholder.`		
+			
+	on complete
+		"Trin Fabricator" -1
+		conversation
+			`Placeholder.`
+			
+		event "trin queen restored" 30
+
+		
+event "trin queen restored"
+	planet "Avalon"
+		outfitter "Trin Basics"
+		
+outfitter "Trin Basics"
+	"Trin Wellstone"
+
+		
+mission "Meet the Restored Trin Queen"
+	name "Meet the Restored Trin Queen"
+	description ""
+	landing
+	to offer
+		has "event: trin queen restored"
+	destination "Avalon"	
+
+	on offer
+		conversation
+			`Placeholder.`
+		fail	
+
+	
+###############################################################################
+# THE DREADHAND                                                               #
+###############################################################################	
+
+mission "*DEBUG* Dreadhand's Challenge"
+	name "*DEBUG* Clear Dreadhand's Challenge"
+	description "Accept this mission to clear all conditions related to the Dreadhand's Challenge storyline."
+	repeat
+	deadline 1
+	job
+	source
+		planet Haven Freedom Farpoint Shroud
+	to offer
+		has "The Dreadhand's Challenge: offered"
+		
+	on accept
+		clear "Dreadhand 1: offered"
+		clear "Dreadhand 1: done"
+		clear "Dreadhand 2: offered"
+		clear "Dreadhand 2: done"
+		clear "Dreadhand 3: offered"
+		clear "Dreadhand 2: Hyperdrive Inhibitor: offered"
+		clear "Dreadhand 2: Hyperdrive Inhibitor: done"
+		clear "Dreadhand 2: Jump Drive Inhibitor: offered"
+		clear "Dreadhand 2: Jump Drive Inhibitor: done"
+		clear "Dreadhand 2: Hyperjump Inhibitor: offered"
+		clear "Dreadhand 2: Hyperjump Inhibitor: done"
+		clear "Dreadhand 2: Flee Haven: offered"
+
+		event "dreadhand fight ends"
+		fail
+
+		
+ship "Shield Beetle" "Shield Beetle (Dreadhand)"
+	"uncapturable"
+	name "The Dreadhand"
+	attributes
+		category "Heavy Warship"
+		"cost" 17900000
+		"shields" 32000
+		"hull" 9800
+		"required crew" 47
+		"bunks" 95
+		"mass" 650
+		"drag" 8.8
+		"heat dissipation" .60
+		"fuel capacity" 500
+		"cargo space" 142
+		"outfit space" 798
+		"weapon capacity" 333
+		"engine capacity" 150
+		"self destruct" .5
+		weapon
+			"blast radius" 480
+			"shield damage" 20000
+			"hull damage" 30000
+			"hit force" 1800
+	outfits
+		"Matrix Gun" 6
+		"Stasis Snare"
+		"Strangelet Cluster" 5
+		"Large Etheric Web" 2
+		"Matrix Amplifier" 4
+		"A520 Atomic Thruster"
+		"A525 Atomic Steering"
+		"Hyperdrive"
+		"Mass Expansion" 7
+		"Small Radar Jammer"
+		"Fragmentation Grenades" 95
+		"Nerve Gas" 80
+		
+	engine -44 133
+	engine -15 133
+	engine 15 133
+	engine 44 133
+	gun -22 -102 "Matrix Gun"
+	gun 22 -102 "Matrix Gun"
+	gun -49 -38 "Matrix Gun"
+	gun 49 -38 "Matrix Gun"
+	gun -34 -68 "Matrix Gun"
+	gun 34 -68 "Matrix Gun"
+	gun -61 -14
+	gun 61 -14
+	turret -57 75 "Stasis Snare"
+	turret 57 75
+	turret -39 48
+	turret 39 48
+	explode "trin large explosion" 8
+	explode "trin nuke explosion" 1
+	"final explode" "final explosion large"
+	
+government "The Dreadhand"
+	swizzle 1
+	"player reputation" -1000
+	"hostile hail" "dreadhand hail"
+	"hostile disabled hail" "dreadhand disabled hail"
+	"attitude toward"
+		"Pirate" .01
+		"Bounty Hunter" -.01	
+		"Independent" -.01
+		"Merchant" -.01
+		"Navy Intelligence" -.01
+		"Navy (Oathkeeper)" -.01
+		"Pirate" .01
+		"Republic" -.01
+		
+mission "Dreadhand 1"
+	name "Respond to Challenge"
+	description "The pirate known as the Dreadhand has challenged you to a duel in <system>. If you accept, land alone at <planet>."
+	clearance `"You the one the Dreadhand's gonna turn into dust? Come on down, we're not missing this."`
+	landing
+	to offer
+		"combat rating" > 22000
+	source
+		government Republic Syndicate
+		near Arneb 4 11
+	destination Haven
+		
+	on offer
+		conversation
+			`As you land at <origin>, you receive a message from an unfamiliar origin:`
+			``
+			`	"<first> <last>, the New Boston runt. You've made a bit of a name for yourself out there. But I know your type. Think you're a big fish 'cause you swim in a small pond. You ain't.`
+			`	Here's the deal, farmboy. I'm Garath Almeida, the Dreadhand, pirate lord of Haven, reaver of the North, and a real shark, not some bottom feeding scum like you.`
+			`	If you're the chicken I reckon you are, run to the Rim and stay out of my turf. But if you want to see what a real pilot can do, come to Haven. Alone. If proving you're not just another Dirt Belt yokel ain't enough for you, my loot's yours for the taking.`
+			`	That is, if you can take it from my cold, dead hands.`
+			`			Come get some,`
+			`				Garath Almeida, the Dreadhand"`
+			``
+			`	It seems your activities have made you a new enemy. Showing up at a pirate stronghold without a fleet at your back might be your last bad idea, but the alternative is ignoring this insult.
+			`(If you mean to accept the challenge, you should take a snapshot of your game before landing at Haven. You may abort the mission to ignore the challenge.)`
+				accept
+				
+	on visit
+		conversation
+			`As your fleet comes in to final approach on <planet>, you pick up a message from the spaceport below. It's from the Dreadhand.`
+			``
+			`You too scared to fight me alone, eh? You think I'd not notice? Can't believe I expected better of t
+	
+	to complete
+		"ships: independent" == 1	
+	on complete
+		event "dreadhand fight begins"
+		
+	
+event "dreadhand fight begins"
+	system "Arneb"
+		fleet clear
+		music "Vindsvept - Thorns (Bonus Track)"
+
+event "dreadhand fight ends"
+	system "Arneb"
+		fleet "Small Northern Pirates" 400
+		fleet "Large Northern Pirates" 500
+		fleet "Large Republic" 15000
+		music clear
+		
+		
+mission "Dreadhand 2"
+	name "Defeat the Dreadhand"
+	description "TBD"
+	infiltrating
+	landing
+	to offer
+		has "Dreadhand 1: done"
+	source Haven
+		
+	on offer
+		conversation
+			`TBD`
+				launch
+
+	npc kill
+		government "The Dreadhand"
+		system "Arneb"
+		personality heroic nemesis vindictive staying
+		ship "Shield Beetle (Dreadhand)" "The Crown of Thorns"
+				
+	on complete
+		event "dreadhand fight ends"
+		
+		
+mission "Dreadhand 3"
+	invisible
+	landing
+	to offer
+		has "Dreadhand 2: done"
+	source Haven
+		
+	on offer
+		payment 12000000
+		conversation
+			`TBD`
+				decline
+				
+		
+		
+outfit "Hyperdrive Inhibitor"
+	category "Systems"
+	cost 400000
+	tags human pirate
+	thumbnail "outfit/unknown"
+	"hyperdrive" -1
+	description "This tiny device, once attached to an inconspicuous part of a ship's hull, is able to prevent the ship from performing a jump. Cunningly, they don't actually make the jump physically impossible: instead, they just trick a ship's flight subroutines into thinking it is."
+	
+outfit "Jump Drive Inhibitor"
+	category "Systems"
+	cost 750000
+	tags human pirate
+	thumbnail "outfit/unknown"
+	"jump drive" -1
+	description "This tiny device, once attached to an inconspicuous part of a ship's hull, is able to prevent the ship from performing a jump. Cunningly, they don't actually make the jump physically impossible: instead, they just trick a ship's flight subroutines into thinking it is."
+	
+outfit "Hyperjump Inhibitor"
+	category "Systems"
+	cost 800000
+	tags human pirate
+	thumbnail "outfit/unknown"
+	"hyperdrive" -1
+	"jump drive" -1
+	description "This tiny device, once attached to an inconspicuous part of a ship's hull, is able to prevent the ship from performing a jump. Cunningly, they don't actually make the jump physically impossible: instead, they just trick a ship's flight subroutines into thinking it is."
+
+mission "Dreadhand 2: Hyperdrive Inhibitor"
+	invisible
+	landing
+	to offer
+		has "Dreadhand 1: done"
+		not "Dreadhand 2: done"
+		has "tag: hyperdrive"
+		not "tag: jump drive"
+	source
+		system "Arneb"
+	on offer
+		outfit "Hyperdrive Inhibitor" 1
+	to complete
+		has "Dreadhand 2: done"
+	on complete
+		outfit "Hyperdrive Inhibitor" -1
+		
+mission "Dreadhand 2: Jump Drive Inhibitor"
+	invisible
+	landing
+	to offer
+		has "Dreadhand 1: done"
+		not "Dreadhand 2: done"
+		has "tag: jump drive"
+		not "tag: hyperdrive"
+	source
+		system "Arneb"	
+	on offer
+		outfit "Jump Drive Inhibitor" 1	
+	to complete
+		has "Dreadhand 2: done"
+	on complete
+		outfit "Jump Drive Inhibitor" -1		
+		
+mission "Dreadhand 2: Hyperjump Inhibitor"
+	invisible
+	landing
+	to offer
+		has "Dreadhand 1: done"
+		not "Dreadhand 2: done"
+		has "tag: jump drive"
+		has "tag: hyperdrive"
+	source
+		system "Arneb"
+	on offer
+		outfit "Hyperjump Inhibitor" 1
+	to complete
+		has "Dreadhand 2: done"
+	on complete
+		outfit "Hyperjump Inhibitor" -1	
+		
+mission "Dreadhand 2: Flee Haven"
+	invisible
+	repeat
+	landing
+	to offer
+		has "Dreadhand 2: active"
+	source
+		system "Arneb"		
+	on offer
+		conversation
+			`As you re-enter into the atmosphere of Haven, your ship's sensors alert you that weapons from both above and below are trained on you. It isn't going to be safe to land back at Haven without first destroying the Dreadhand and finishing the duel.`
+				flee	
