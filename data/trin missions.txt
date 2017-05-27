@@ -14,15 +14,22 @@ fleet "Quarg Reinforcement"
 		"Quarg Wardragon" 4
 	variant
 		"Quarg Wardragon" 3
+	variant
+		"Quarg Wardragon" 3
+		"Quarg Skylark" 1
+	variant
+		"Quarg Wardragon" 2
+		"Quarg Skylark" 3
 
 # Hai Raids
 mission "Trin Kagriri Raid the Hai"
 	deadline 1
 	invisible
+	minor
 	repeat
 	landing
 	to offer
-		random <= 4
+		random <= 400
 	source
 		attributes "hai" "unfettered"
 	npc
@@ -37,10 +44,11 @@ mission "Trin Kagriri Raid the Hai"
 mission "Trin Destanu Raid the Hai"
 	deadline 1
 	invisible
+	minor
 	repeat
 	landing
 	to offer
-		random <= 4
+		random <= 400
 	source
 		attributes "hai" "unfettered"
 	npc kill
@@ -57,10 +65,11 @@ mission "Trin Destanu Raid the Hai"
 mission "Trin Kagriri Raid the Efreti"
 	deadline 1
 	invisible
+	minor
 	repeat
 	landing
 	to offer
-		random <= 4
+		random <= 400
 	source
 		near "Sevrelect" 0 4
 	npc kill
@@ -76,10 +85,11 @@ mission "Trin Kagriri Raid the Efreti"
 mission "Trin Maru Raid the Efreti"
 	deadline 1
 	invisible
+	minor
 	repeat
 	landing
 	to offer
-		random <= 4
+		random <= 400
 	source
 		near "Sevrelect" 0 4
 	npc kill
@@ -96,10 +106,11 @@ mission "Trin Maru Raid the Efreti"
 mission "Trin Kagriri Raid the Korath"
 	deadline 1
 	invisible
+	minor
 	repeat
 	landing
 	to offer
-		random <= 7
+		random <= 700
 	source
 		near "Mesuket" 0 4
 	npc kill
@@ -111,10 +122,11 @@ mission "Trin Kagriri Raid the Korath"
 mission "Trin Maru Raid the Korath"
 	deadline 1
 	invisible
+	minor
 	repeat
 	landing
 	to offer
-		random <= 7
+		random <= 700
 	source
 		near "Mesuket" 0 4
 	npc kill
@@ -123,15 +135,16 @@ mission "Trin Maru Raid the Korath"
 		fleet "Trin Maru Raid"	
 		
 		
-# Wanderer Raids: Note that the Trin do not raid while the Pug are actively defending Ap'arak. Presumably this condition won't eventually be permanent, but in 0.9.5 it currently is. This is to prevent a Trin raid from destroying the two Arfectas defending Ap'arak, however unlikely that is. You should just assume that while the Pug are holding Ap'arak, they're also actively pre-emptively dealing with any Trin.
+# Wanderer Raids: Note that the Trin do not raid while the Pug are actively defending Ap'arak. This is to prevent a Trin raid from destroying the two Arfectas defending Ap'arak, however unlikely that is. You should just assume that while the Pug are holding Ap'arak, they're also actively pre-emptively dealing with any Trin.
 mission "Trin Lranu Raid the Wanderers"
 	deadline 1
 	invisible
+	minor
 	repeat
 	landing
 	to offer
 		and
-			random <= 4
+			random <= 400
 			not "Wanderers Ap'arak 3: Pug: active"
 	source
 		attributes "wanderer"
@@ -144,11 +157,12 @@ mission "Trin Lranu Raid the Wanderers"
 mission "Trin Destanu Raid the Wanderers"
 	deadline 1
 	invisible
+	minor
 	repeat
 	landing
 	to offer
 		and
-			random <= 4
+			random <= 400
 			not "Wanderers Ap'arak 3: Pug: active"
 	source
 		attributes "wanderer"

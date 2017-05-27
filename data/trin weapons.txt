@@ -722,6 +722,7 @@ outfit "Hunter-Trapper Beam"
 ###############################################################################
 		
 outfit "Trin Wellstone"
+	plural "Trin Wellstone"
 	category "Ammunition"
 	tags alien trin
 	cost 0

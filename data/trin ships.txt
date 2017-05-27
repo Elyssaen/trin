@@ -185,6 +185,7 @@ ship "Trin Piranha" "Trin Piranha (Killer)"
 
 ship "Trin Raja"
 	sprite "ship/trin raja"
+		rewind
 	attributes
 		category "Interceptor"
 		tags alien trin
@@ -751,29 +752,6 @@ ship "Trin Mako" "Trin Mako (Mortar)"
 		"Outfits Expansion" 3
 		"Stasis Chamber" 3
 		"Trin Shield Projector" 105
-	
-ship "Trin Mako" "Trin Mako (Empyreal)"
-	crew 182
-	outfits
-		"Matrix Battery"
-		"Empyreal Field" 
-		"Hunter-Killer Pod" 2
-		"Trin Wellstone Vessel" 3
-		"Trin Wellstone" 91
-		
-		"Strangelet Cluster"
-		"Strangelet Cell"
-		"Neutron Torch Drive"
-		"Neutron Lantern Drive"
-		"Medium Etheric Web" 2
-		
-		"Quantum Shroud" 2
-		"Matrix Amplifier" 
-		"Trin Ramscoop"
-		"Shunt Drive"
-		"Outfits Expansion" 3
-		"Stasis Chamber" 3
-		"Trin Shield Projector" 104
 		
 ship "Trin Mako" "Trin Mako (Close)"
 	crew 182
@@ -936,31 +914,6 @@ ship "Trin Antiarch" "Trin Antiarch (Close)"
 		"Stasis Chamber" 6
 		"Trin Shield Projector" 600
 			
-ship "Trin Antiarch" "Trin Antiarch (Empyreal)"
-	crew 972
-	outfits
-		"Arcblade"
-		"Matrix Battery" 2
-		"Empyreal Field"
-		"Stasis Snare"
-		"Hunter-Killer Pod" 2
-		"Hunter-Seeker Pod" 2
-		"Trin Wellstone Vessel" 3
-		"Trin Wellstone" 132
-		
-		"Strangelet Core"
-		"Neutron Torch Drive" 2
-		"Large Etheric Web"
-		"Medium Etheric Web"
-		"Small Etheric Web"
-		
-		"Quantum Shroud" 2
-		"Trin Ramscoop"
-		"Shunt Drive"
-		"Outfits Expansion" 6
-		"Stasis Chamber" 6
-		"Trin Shield Projector" 600
-
 		
 ###############################################################################
 
