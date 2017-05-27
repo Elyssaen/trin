@@ -116,7 +116,6 @@ outfit "Stasis Chamber"
 	
 ###############################################################################
 	
-# Required crew on these is set to ensure Trin ships actually fill their crew complement. Since they're not installable by the player, the player won't ever face this oddity.	
 outfit "Trin Shield Projector"
 	category "Hand to Hand"
 	tags alien trin
@@ -125,7 +124,6 @@ outfit "Trin Shield Projector"
 	"capture defense" 250
 	"unplunderable" 1
 	"installable" -1
-	"required crew" 1
 	description "Trin Shield Projectors are wearable technology that absorb a negligible fraction of your ship's shielding to project a personnel shield used in boarding defence. Supplemental crew protected by these Projectors are almost invincible."
 	description "	Unfortunately, you're not able to work out how to link this Projector to a given shield, so installing it on a new ship is out of the question."
 	

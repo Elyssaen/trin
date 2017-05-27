@@ -283,32 +283,32 @@ fleet "Trin Kagriri Raid"
 	personality
 		heroic frugal mute
 	variant 2
-		"Trin Antiarch"
+		"Trin Antiarch (Fallen)"
 		"Trin Piranha" 10
-		"Trin Raja" 3
+		"Trin Raja (Fallen)" 3
 	variant 1
 		"Trin Antiarch (Close)"
 		"Trin Piranha" 6
 		"Trin Piranha (Killer)" 4
-		"Trin Raja" 3
+		"Trin Raja (Fallen)" 3
 	variant 5
-		"Trin Mako"
+		"Trin Mako (Fallen)"
 		"Trin Piranha" 6
-		"Trin Raja" 6
+		"Trin Raja (Fallen)" 6
 	variant 3
 		"Trin Mako (Trapper)"
 		"Trin Piranha" 6
-		"Trin Raja" 6
+		"Trin Raja (Fallen)" 6
 	variant 5
-		"Trin Chimaera" 3
-		"Trin Raja" 4
+		"Trin Chimaera (Fallen)" 3
+		"Trin Raja (Fallen)" 4
 	variant 4
 		"Trin Chimaera (Killer)" 2
 		"Trin Chimaera (Snaring)" 1
-		"Trin Raja" 4
+		"Trin Raja (Fallen)" 4
 	variant 1
-		"Trin Chimaera" 2
-		"Trin Marlin" 6
+		"Trin Chimaera (Fallen)" 2
+		"Trin Marlin (Fallen)" 6
 
 		
 fleet "Trin Lranu Raid"
@@ -321,19 +321,19 @@ fleet "Trin Lranu Raid"
 		"Trin Antiarch (Empyreal)"
 		"Trin Piranha" 6
 		"Trin Piranha (Killer)" 4
-		"Trin Raja" 3
+		"Trin Raja (Fallen)" 3
 	variant 4
-		"Trin Mako"
+		"Trin Mako (Fallen)"
 		"Trin Piranha" 6
-		"Trin Raja" 6		
+		"Trin Raja (Fallen)" 6		
 	variant 4
 		"Trin Mako (Empyreal)"
 		"Trin Piranha (Killer)" 6
-		"Trin Raja" 6
+		"Trin Raja (Fallen)" 6
 	variant 3
-		"Trin Chimaera" 2
+		"Trin Chimaera (Fallen)" 2
 		"Trin Chimaera (Killer)"
-		"Trin Raja" 4
+		"Trin Raja (Fallen)" 4
 	variant 3
 		"Trin Chimaera (Reaper)" 3
 		"Marlin (Reaper)" 4
@@ -348,9 +348,9 @@ fleet "Trin Maru Raid"
 	variant 4
 		"Trin Mako (Mortar)"
 		"Trin Piranha" 6
-		"Trin Raja" 6		
+		"Trin Raja (Fallen)" 6		
 	variant 4
-		"Trin Mako"
+		"Trin Mako (Fallen)"
 		"Trin Piranha" 6
 		"Trin Raja (Killer)" 6
 	variant 5
@@ -364,13 +364,13 @@ fleet "Trin Maru Raid"
 		"Trin Marlin (Mortar)" 4
 	variant 3
 		"Trin Chimaera (Seeker)" 3
-		"Trin Raja" 4
+		"Trin Raja (Fallen)" 4
 	variant 3
 		"Trin Chimaera" 3
-		"Trin Raja" 4
+		"Trin Raja (Fallen)" 4
 	variant 2
 		"Trin Chimaera (Killer II))" 3
-		"Trin Raja" 4
+		"Trin Raja (Fallen)" 4
 
 		
 fleet "Trin Destanu Raid"
@@ -382,24 +382,24 @@ fleet "Trin Destanu Raid"
 	variant 2
 		"Trin Mako (Close)"
 		"Trin Piranha" 6
-		"Trin Raja" 6		
+		"Trin Raja (Fallen)" 6		
 	variant 1
-		"Trin Mako"
+		"Trin Mako (Fallen)"
 		"Trin Piranha" 6
-		"Trin Raja" 6
+		"Trin Raja (Fallen)" 6
 	variant 1
 		"Trin Mako (Trapper)"
 		"Trin Piranha" 6
-		"Trin Raja" 6
+		"Trin Raja (Fallen)" 6
 	variant 4
 		"Trin Chimaera (Ghosting)" 3
 		" Trin Chimaera" 6
-		"Trin Raja" 5
+		"Trin Raja (Fallen)" 5
 	variant 4
 		"Trin Chimaera" 2
 		"Trin Chimaera (Killer)" 1
-		"Trin Raja" 5
+		"Trin Raja (Fallen)" 5
 	variant 1
-		"Trin Chimaera" 3
+		"Trin Chimaera (Fallen)" 3
 		"Marlin (Battery)" 3
 	

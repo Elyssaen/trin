@@ -222,19 +222,37 @@ ship "Trin Raja"
 		"Matrix Amplifier"
 		"Trin Ramscoop"
 		"Shunt Drive"
-		"Mass Expansion"
-		"Stasis Chamber"
-		"Trin Shield Projector" 15
 		
-	engine -15 41
-	engine 15 41
-	gun 0 -41 "Matrix Gun"
-	gun 0 30 "Hunter-Killer Pod"
+	engine -18 45 0.75
+	engine 18 45 0.75
+	gun 13 -48 "Matrix Gun"
+	gun -13 -48 "Hunter-Killer Pod"
 	explode "trin large explosion" 2
 	"final explode" "final explosion medium"
 	description "While not the most dangerous of Trin ships, Raja interceptors are protected by extremely powerful shield matrices for their size, and are relatively inexpensive for the Trin to fabricate. Even the capital ships of less advanced species are at best on par with a single Raja, and a wing of these interceptors is a threat to any ship."
 
+	
+ship "Trin Raja" "Trin Raja (Fallen)"
+	crew 16
+	outfits
+		"Matrix Gun"
+		"Hunter-Killer Pod"
+		"Trin Wellstone Vessel"
+		"Trin Wellstone" 33
+		
+		"Strangelet Cell" 2
+		"Neutron Lantern Drive" 2
+		"Small Etheric Web" 2
+		
+		"Matrix Amplifier"
+		"Trin Ramscoop"
+		"Shunt Drive"
+		"Outfits Expansion"
+		"Stasis Chamber"
+		"Trin Shield Projector" 16
+	
 ship "Trin Raja" "Trin Raja (Killer)"
+	crew 16
 	outfits
 		"Hunter-Killer Pod" 2
 		"Trin Wellstone Vessel" 2
@@ -248,8 +266,22 @@ ship "Trin Raja" "Trin Raja (Killer)"
 		"Trin Ramscoop"
 		"Shunt Drive"
 		"Stasis Chamber"
-		"Trin Shield Projector" 15
+		"Trin Shield Projector" 16
 
+ship "Trin Raja" "Trin Raja (Reaper)"
+	crew 16
+	outfits
+		"Phase Reaper" 2
+		
+		"Strangelet Cell" 2
+		"Neutron Lantern Drive" 2
+		"Small Etheric Web" 2
+		
+		"Matrix Amplifier"
+		"Trin Ramscoop"
+		"Shunt Drive"
+		"Stasis Chamber"
+		"Trin Shield Projector" 16
 		
 ###############################################################################
 # LIGHT WARSHIP                                                               #
@@ -295,9 +327,6 @@ ship "Trin Marlin"
 		"Matrix Amplifier"
 		"Trin Ramscoop"
 		"Shunt Drive"
-		"Mass Expansion" 2
-		"Stasis Chamber" 2
-		"Trin Shield Projector" 36
 		
 	engine -15 78
 	engine -15 78
@@ -311,7 +340,26 @@ ship "Trin Marlin"
 	"final explode" "final explosion medium"
 	description "Once used as everything from a courier to a patrol ship, the only Marlins seen anymore are those configured as light warships and harriers. This Marlin is able to run extremely overpowered engines, making it potentially one of the fastest ships in existence, and still has enough space for best-in-class versatility."
 
+ship "Trin Marlin" "Trin Marlin (Fallen)"
+	crew 44
+	outfits
+		"Matrix Gun" 2
+		"Stasis Snare"
+		
+		"Strangelet Cluster"
+		"Neutron Torch Drive"
+		"Medium Etheric Web" 2
+		
+		"Quantum Shroud"
+		"Matrix Amplifier"
+		"Trin Ramscoop"
+		"Shunt Drive"
+		"Outfits Expansion" 2
+		"Stasis Chamber" 2
+		"Trin Shield Projector" 44
+		
 ship "Trin Marlin" "Trin Marlin (Battery)"
+	crew 44
 	outfits
 		"Matrix Battery"
 		
@@ -324,11 +372,12 @@ ship "Trin Marlin" "Trin Marlin (Battery)"
 		"Matrix Amplifier"
 		"Trin Ramscoop"
 		"Shunt Drive"
-		"Mass Expansion" 2
+		"Outfits Expansion" 2
 		"Stasis Chamber" 2
-		"Trin Shield Projector" 36
+		"Trin Shield Projector" 44
 		
 ship "Trin Marlin" "Trin Marlin (Reaper)"
+	crew 44
 	outfits
 		"Phase Reaper Turret" 2
 		"Hunter-Trapper Pod"
@@ -343,11 +392,12 @@ ship "Trin Marlin" "Trin Marlin (Reaper)"
 		"Matrix Amplifier"
 		"Trin Ramscoop"
 		"Shunt Drive"
-		"Mass Expansion" 2
+		"Outfits Expansion" 2
 		"Stasis Chamber" 2
-		"Trin Shield Projector" 36
+		"Trin Shield Projector" 44
 		
 ship "Trin Marlin" "Trin Marlin (Mortar)"
+	crew 44
 	outfits
 		"Wakefield Mortar"
 		
@@ -360,9 +410,9 @@ ship "Trin Marlin" "Trin Marlin (Mortar)"
 		"Matrix Amplifier"
 		"Trin Ramscoop"
 		"Shunt Drive"
-		"Mass Expansion" 2
+		"Outfits Expansion" 2
 		"Stasis Chamber" 2
-		"Trin Shield Projector" 36
+		"Trin Shield Projector" 44
 		
 		
 ###############################################################################
@@ -410,9 +460,6 @@ ship "Trin Chimaera"
 		"Matrix Amplifier" 2
 		"Trin Ramscoop"
 		"Shunt Drive"
-		"Mass Expansion" 3
-		"Stasis Chamber" 3
-		"Trin Shield Projector" 58
 		
 	engine -60 80
 	engine -60 80
@@ -430,7 +477,29 @@ ship "Trin Chimaera"
 	"final explode" "final explosion large"
 	description "The Trin Chimaera entered mass production in the Trin's last days as an answer to the Quarg. Chimaeras are heavy destroyers with devastating firepower and rapid shield regeneration, but their long-range capabilities are lacking. While their record against the Quarg is mixed, a single Chimaera can make short work of an entire fleet of less advanced ships."
 	
+ship "Trin Chimaera" "Trin Chimaera (Fallen)"
+	crew 91
+	outfits
+		"Matrix Gun" 4
+		"Hunter-Killer Pod" 2
+		"Trin Wellstone Vessel" 2
+		"Trin Wellstone" 66
+		"Stasis Snare"
+		
+		"Strangelet Chamber"
+		"Neutron Torch Drive"
+		"Large Etheric Web"
+		
+		"Quantum Shroud"
+		"Matrix Amplifier" 2
+		"Trin Ramscoop"
+		"Shunt Drive"
+		"Outfits Expansion" 3
+		"Stasis Chamber" 3
+		"Trin Shield Projector" 91
+		
 ship "Trin Chimaera" "Trin Chimaera (Killer)"
+	crew 91
 	outfits
 		"Matrix Gun" 2
 		"Hunter-Killer Pod" 4
@@ -446,11 +515,12 @@ ship "Trin Chimaera" "Trin Chimaera (Killer)"
 		"Matrix Amplifier" 2
 		"Trin Ramscoop"
 		"Shunt Drive"
-		"Mass Expansion" 3
+		"Outfits Expansion" 3
 		"Stasis Chamber" 3
-		"Trin Shield Projector" 58
+		"Trin Shield Projector" 91
 
 ship "Trin Chimaera" "Trin Chimaera (Killer II)"
+	crew 91
 	outfits
 		"Hunter-Killer Pod" 6
 		"Trin Wellstone Vessel" 6
@@ -465,11 +535,12 @@ ship "Trin Chimaera" "Trin Chimaera (Killer II)"
 		"Matrix Amplifier" 2
 		"Trin Ramscoop"
 		"Shunt Drive"
-		"Mass Expansion" 3
+		"Outfits Expansion" 3
 		"Stasis Chamber" 3
-		"Trin Shield Projector" 58
+		"Trin Shield Projector" 91
 		
 ship "Trin Chimaera" "Trin Chimaera (Seeker)"
+	crew 91
 	outfits
 		"Matrix Gun" 4
 		"Stasis Snare"
@@ -485,11 +556,12 @@ ship "Trin Chimaera" "Trin Chimaera (Seeker)"
 		"Matrix Amplifier" 2
 		"Trin Ramscoop"
 		"Shunt Drive"
-		"Mass Expansion" 3
+		"Outfits Expansion" 3
 		"Stasis Chamber" 3
-		"Trin Shield Projector" 58
+		"Trin Shield Projector" 91
 
 ship "Trin Chimaera" "Trin Chimaera (Snaring)"
+	crew 91
 	outfits
 		"Matrix Gun" 4
 		"Stasis Snare" 2
@@ -502,11 +574,12 @@ ship "Trin Chimaera" "Trin Chimaera (Snaring)"
 		"Matrix Amplifier" 2
 		"Trin Ramscoop"
 		"Shunt Drive"
-		"Mass Expansion" 3
+		"Outfits Expansion" 3
 		"Stasis Chamber" 3
-		"Trin Shield Projector" 57
+		"Trin Shield Projector" 91
 		
 ship "Trin Chimaera" "Trin Chimaera (Reaper)"
+	crew 91
 	outfits
 		"Phase Reaper" 6
 		"Stasis Snare"
@@ -520,11 +593,12 @@ ship "Trin Chimaera" "Trin Chimaera (Reaper)"
 		"Matrix Amplifier" 2
 		"Trin Ramscoop"
 		"Shunt Drive"
-		"Mass Expansion" 3
+		"Outfits Expansion" 3
 		"Stasis Chamber" 3
-		"Trin Shield Projector" 57
+		"Trin Shield Projector" 91
 		
-ship "Trin Chimaera" "Trin Chimaera (Ghosting)"	
+ship "Trin Chimaera" "Trin Chimaera (Ghosting)"
+	crew 91
 	attributes
 		category "Medium Warship"
 		tags alien trin warship
@@ -561,9 +635,9 @@ ship "Trin Chimaera" "Trin Chimaera (Ghosting)"
 		"Matrix Amplifier" 2
 		"Trin Ramscoop"
 		"Shunt Drive"
-		"Mass Expansion" 3
+		"Outfits Expansion" 3
 		"Stasis Chamber" 3
-		"Trin Shield Projector" 58
+		"Trin Shield Projector" 91
 	drone 0 0
 	drone 0 0		
 
@@ -613,9 +687,6 @@ ship "Trin Mako"
 		"Matrix Amplifier" 
 		"Trin Ramscoop"
 		"Shunt Drive"
-		"Mass Expansion" 3
-		"Stasis Chamber" 3
-		"Trin Shield Projector" 105
 	
 	engine 0 222 0.9
 	engine 60 120 0.6
@@ -638,7 +709,29 @@ ship "Trin Mako"
 	"final explode" "final explosion large"
 	description "The long-serving Mako has been used by the Trin since they first discovered the hyperdrive. While usually configured today as an escort carrier and patrol cruiser, earlier generations have been explorers, blockade runners and even cruise ships. The Mako doesn't have the most advanced shielding and is underpowered for a Trin warship, but it's surprisingly fast for a carrier and can support a squadron of Piranhas."
 
+ship "Trin Mako" "Trin Mako (Fallen)"
+	crew 182
+	outfits
+		"Matrix Battery"
+		"Hunter-Seeker Pod" 4
+		"Trin Wellstone Vessel" 4
+		"Trin Wellstone" 132
+		
+		"Strangelet Chamber"
+		"Neutron Torch Drive"
+		"Neutron Lantern Drive"
+		"Medium Etheric Web" 2
+		
+		"Quantum Shroud" 2
+		"Matrix Amplifier" 
+		"Trin Ramscoop"
+		"Shunt Drive"
+		"Outfits Expansion" 3
+		"Stasis Chamber" 3
+		"Trin Shield Projector" 105
+		
 ship "Trin Mako" "Trin Mako (Mortar)"
+	crew 182
 	outfits
 		"Wakefield Mortar"
 		"Hunter-Seeker Pod" 4
@@ -655,11 +748,12 @@ ship "Trin Mako" "Trin Mako (Mortar)"
 		"Matrix Amplifier" 
 		"Trin Ramscoop"
 		"Shunt Drive"
-		"Mass Expansion" 3
+		"Outfits Expansion" 3
 		"Stasis Chamber" 3
 		"Trin Shield Projector" 105
 	
 ship "Trin Mako" "Trin Mako (Empyreal)"
+	crew 182
 	outfits
 		"Matrix Battery"
 		"Empyreal Field" 
@@ -677,11 +771,12 @@ ship "Trin Mako" "Trin Mako (Empyreal)"
 		"Matrix Amplifier" 
 		"Trin Ramscoop"
 		"Shunt Drive"
-		"Mass Expansion" 3
+		"Outfits Expansion" 3
 		"Stasis Chamber" 3
 		"Trin Shield Projector" 104
 		
 ship "Trin Mako" "Trin Mako (Close)"
+	crew 182
 	outfits
 		"Matrix Battery"
 		"Hunter-Killer Pod" 4
@@ -698,11 +793,12 @@ ship "Trin Mako" "Trin Mako (Close)"
 		"Matrix Amplifier" 
 		"Trin Ramscoop"
 		"Shunt Drive"
-		"Mass Expansion" 3
+		"Outfits Expansion" 3
 		"Stasis Chamber" 3
 		"Trin Shield Projector" 105
 
 ship "Trin Mako" "Trin Mako (Trapper)"
+	crew 182
 	outfits
 		"Matrix Battery"
 		"Hunter-Seeker Pod" 2
@@ -720,27 +816,10 @@ ship "Trin Mako" "Trin Mako (Trapper)"
 		"Matrix Amplifier" 
 		"Trin Ramscoop"
 		"Shunt Drive"
-		"Mass Expansion" 3
+		"Outfits Expansion" 3
 		"Stasis Chamber" 3
 		"Trin Shield Projector" 105
 
-# Doesn't appear yet. Is an alternative to the Cachalot for a particular mission in the Hai Research arc.		
-ship "Trin Mako" "Trin Mako (Freighter)"
-	outfits
-		"Hunter-Seeker Pod" 4
-		"Trin Wellstone Vessel" 4
-		"Trin Wellstone" 132
-		
-		"Strangelet Cluster"
-		"Neutron Torch Drive"
-		"Small Etheric Web" 2
-		
-		"Quantum Shroud"
-		"Trin Ramscoop"
-		"Shunt Drive"
-		"Cargo Expansion" 8
-		"Stasis Chamber" 3
-		"Trin Shield Projector" 106
 
 ###############################################################################
 	
@@ -786,9 +865,6 @@ ship "Trin Antiarch"
 		"Quantum Shroud" 2
 		"Trin Ramscoop"
 		"Shunt Drive"
-		"Mass Expansion" 6
-		"Stasis Chamber" 6
-		"Trin Shield Projector" 310
 	
 	engine -52 304
 	engine 0 325
@@ -817,7 +893,30 @@ ship "Trin Antiarch"
 	"final explode" "final explosion large"
 	description "The Antiarch was once a symbol of the Trin's greatness: a mothership that represented an entire population's pride. These city-ships are incredibly, excessively powerful, and were known in the Trin language as 'Invincibles' for a reason."
 	
+ship "Trin Antiarch" "Trin Antiarch (Fallen)"
+	crew 972
+	outfits
+		"Arcblade"
+		"Matrix Battery" 3
+		"Stasis Snare" 2
+		"Hunter-Killer Pod" 2
+		"Hunter-Seeker Pod" 2
+		"Trin Wellstone Vessel" 4
+		"Trin Wellstone" 132
+		
+		"Strangelet Core"
+		"Neutron Torch Drive" 2
+		"Large Etheric Web" 2
+		
+		"Quantum Shroud" 2
+		"Trin Ramscoop"
+		"Shunt Drive"
+		"Outfits Expansion" 6
+		"Stasis Chamber" 6
+		"Trin Shield Projector" 600
+		
 ship "Trin Antiarch" "Trin Antiarch (Close)"
+	crew 972
 	outfits
 		"Matrix Battery" 3
 		"Stasis Snare" 2
@@ -833,11 +932,12 @@ ship "Trin Antiarch" "Trin Antiarch (Close)"
 		"Quantum Shroud" 2
 		"Trin Ramscoop"
 		"Shunt Drive"
-		"Mass Expansion" 6
+		"Outfits Expansion" 6
 		"Stasis Chamber" 6
-		"Trin Shield Projector" 310
+		"Trin Shield Projector" 600
 			
 ship "Trin Antiarch" "Trin Antiarch (Empyreal)"
+	crew 972
 	outfits
 		"Arcblade"
 		"Matrix Battery" 2
@@ -857,10 +957,11 @@ ship "Trin Antiarch" "Trin Antiarch (Empyreal)"
 		"Quantum Shroud" 2
 		"Trin Ramscoop"
 		"Shunt Drive"
-		"Mass Expansion" 6
+		"Outfits Expansion" 6
 		"Stasis Chamber" 6
-		"Trin Shield Projector" 310
+		"Trin Shield Projector" 600
 
+		
 ###############################################################################
 
 ship "Trin Mobula"
@@ -903,9 +1004,6 @@ ship "Trin Mobula"
 		"Matrix Amplifier" 3
 		"Trin Ramscoop"
 		"Shunt Drive"
-		"Mass Expansion" 2
-		"Stasis Chamber" 2
-		"Trin Shield Projector" 49
 
 	engine 0 175 1.5
 	engine 0 175 1.5
@@ -929,7 +1027,29 @@ ship "Trin Mobula"
 	description "Modelled on the successes of the Chimaera, the Destanu Trin developed the Mobula hoping to create a powerful dedicated battlecruiser capable of challenging the Archons. History judged that hope to be in vain, but the Mobula remains one of the most powerful warships ever created."
 
 
+	
+ship "Trin Mobula" "Trin Mobula (Fallen)"
+	crew 145
+	outfits
+		"Matrix Array" 4
+		"Stasis Snare" 2
+		"Warp Cascade" 2
+		
+		"Strangelet Chamber" 2
+		"Neutron Beacon Drive"
+		"Large Etheric Web"
+		"Medium Etheric Web"
+		
+		"Quantum Shroud"
+		"Matrix Amplifier" 3
+		"Trin Ramscoop"
+		"Shunt Drive"
+		"Outfits Expansion" 2
+		"Stasis Chamber" 2
+		"Trin Shield Projector" 145
+	
 ship "Trin Mobula" "Trin Mobula (No Warp)"
+	crew 145
 	outfits
 		"Matrix Array" 4
 		"Stasis Snare" 2
@@ -943,11 +1063,12 @@ ship "Trin Mobula" "Trin Mobula (No Warp)"
 		"Matrix Amplifier" 3
 		"Trin Ramscoop"
 		"Shunt Drive"
-		"Mass Expansion" 2
+		"Outfits Expansion" 2
 		"Stasis Chamber" 2
-		"Trin Shield Projector" 49
+		"Trin Shield Projector" 145
 
 ship "Trin Mobula" "Trin Mobula (Warp)"
+	crew 145
 	outfits
 		"Matrix Array" 3
 		"Warp Cascade" 4
@@ -961,9 +1082,9 @@ ship "Trin Mobula" "Trin Mobula (Warp)"
 		"Matrix Amplifier" 3
 		"Trin Ramscoop"
 		"Shunt Drive"
-		"Mass Expansion" 2
+		"Outfits Expansion" 2
 		"Stasis Chamber" 2
-		"Trin Shield Projector" 49
+		"Trin Shield Projector" 145
 		
 ###############################################################################
 # HEAVY FREIGHTERS                                                            #
@@ -1011,9 +1132,6 @@ ship "Trin Cachalot"
 		"Quantum Shroud" 3
 		"Trin Ramscoop"
 		"Shunt Drive"
-		"Mass Expansion" 18
-		"Stasis Chamber" 5
-		"Trin Shield Projector" 202
 		
 	engine 0 235
 	engine 0 235
@@ -1029,7 +1147,8 @@ ship "Trin Cachalot"
 	"final explode" "final explosion large"		
 	description "During the height of Trin civilisation over a dozen classes of freighters filled their spaceways. Today, the fallen Trin produce only one: the armoured Cachalot. With substantial protection and impressive firepower, the Cachalot could easily be mistaken for a capital ship, but it does suffer from poor mobility and a lack of staying power."
 
-ship "Trin Cachalot" "Trin Cachalot (Base)"	
+ship "Trin Cachalot" "Trin Cachalot (Fallen)"
+	crew 289
 	outfits
 		"Matrix Battery" 2
 		"Hunter-Seeker Pod" 2
@@ -1037,14 +1156,18 @@ ship "Trin Cachalot" "Trin Cachalot (Base)"
 		"Trin Wellstone Vessel" 3
 		"Trin Wellstone" 107
 		
-		"Strangelet Cluster"
+		"Strangelet Cluster" 2
 		"Strangelet Cell"
 		"Neutron Torch Drive"
 		"Medium Etheric Web" 2
 		
+		"Trin Fabricator"
 		"Quantum Shroud" 3
 		"Trin Ramscoop"
 		"Shunt Drive"
+		"Outfits Expansion" 18
+		"Stasis Chamber" 5
+		"Trin Shield Projector" 202
 		
 		
 ###############################################################################

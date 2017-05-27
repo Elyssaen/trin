@@ -137,7 +137,7 @@ outfit "Matrix Array"
 		sound "plasma"
 		"hit effect" "large matrix explosion"
 		"submunition" "Matrix Bolt 1" 1
-		"swivel degrees" 60
+		"firing arc" 60
 		"lifetime" 6
 		"reload" 9
 		"velocity" 20
@@ -308,49 +308,6 @@ outfit "Phase Reaper Turret"
 	description "For millenia, the short-ranged Phase Reapers only saw use on Trin fighters, as capital ships did not have the agility to use them effectively. This changed with the Chimaera and military versions of the Marlin, so the Trin developed this Phase Reaper Turret to provide a smaller alternative to their enormous Matrix Batteries."
 
 ###############################################################################
-	
-outfit "Empyreal Field"
-	category "Turrets"
-	tags alien trin weapon
-	cost 7300000
-	thumbnail "outfit/empyreal field"
-	"mass" 62
-	"outfit space" -62
-	"weapon capacity" -62
-	"turret mounts" -1
-	"required crew" 1
-	weapon
-		sound "empyreal field"
-		submunition "Empyreal Tracer"
-		submunition "Empyreal Feedback"
-		"lifetime" 5
-		"optimal range" 600
-		"reload" 1
-		"firing energy" 22
-		"firing heat" -100
-		"no collision"
-	description "This field generator might have begun as a novel attempt to create a multidimensional heat shunt. Certainly, firing up the Empyreal Field would quickly cool your ship, if all the heat energy (and more) didn't drop back into our dimensions almost immediately. On the bright side, most of it re-emerges on other nearby masses. As this is less of a problem for cool-running Trin ships than just about everyone else, they sometimes deploy the device as a rather effective weapon."
-
-# Required as the AI will only fire the Empyreal Field if it believes it can hit something with it, and the shield/hull damage ensures that the target will react as if assaulted.	
-outfit "Empyreal Tracer"
-	weapon
-		"velocity" 600
-		"lifetime" 1
-		"optimal range" 600
-		"shield damage" 0.0001
-		"hull damage" 0.0001
-		
-outfit "Empyreal Feedback"
-	weapon
-		"hit effect" "empyreal field" 1
-		"lifetime" 1
-		"optimal range" 600
-		"trigger radius" 600
-		"blast radius" 600
-		"heat damage" 150
-	
-###############################################################################
-	
 
 	#description "The Warp Ray is an experimental weapon the Trin developed during their resistance against the Drak and the Quarg. While powerful attracting a target at a long range, the Warp Ray also creates a repulsive sphere in close ranges and powerfully shears through matter within the field."
 
@@ -630,7 +587,7 @@ outfit "Hunter-Killer Pod"
 		"firing heat" 100
 		"firing force" 50
 		"acceleration" 1.6
-		"drag" .1
+		"drag" .2
 		"turn" 8
 		"homing" 2
 		"infrared tracking" .4
@@ -686,7 +643,7 @@ outfit "Hunter-Seeker Pod"
 		"firing heat" 150
 		"firing force" 75
 		"acceleration" 2.1
-		"drag" .1
+		"drag" .175
 		"turn" 8
 		"homing" 2
 		"infrared tracking" .9
@@ -740,7 +697,7 @@ outfit "Hunter-Trapper Pod"
 		"firing heat" 130
 		"firing force" 35
 		"acceleration" 1.8
-		"drag" .1
+		"drag" .225
 		"turn" 8
 		"homing" 2
 		"infrared tracking" .6
@@ -930,15 +887,6 @@ effect "arcblade blast"
 	"random velocity" .6
 	"random spin" 3
 	"random frame rate" 5
-	"velocity scale" 0
-
-effect "empyreal field"
-	sprite "effect/empyreal field"
-		"no repeat"
-		"frame rate" 30
-	"lifetime" 2
-	"random angle" 360
-	"random spin" 5
 	"velocity scale" 0
 	
 effect "warp ring"

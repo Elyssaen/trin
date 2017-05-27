@@ -159,6 +159,448 @@ mission "Trin Destanu Raid the Wanderers"
 		
 
 ###############################################################################
+# THE DREADHAND                                                               #
+###############################################################################	
+
+mission "*DEBUG* Dreadhand's Challenge"
+	name "*DEBUG* Clear Dreadhand's Challenge"
+	description "Accept this mission to clear all conditions related to the Dreadhand's Challenge storyline."
+	repeat
+	deadline 1
+	job
+	source
+		planet Haven Freedom Farpoint Shroud
+	to offer
+		has "The Dreadhand's Challenge: offered"
+		
+	on accept
+		clear "Dreadhand 1: offered"
+		clear "Dreadhand 1: done"
+		clear "Dreadhand 2: offered"
+		clear "Dreadhand 2: done"
+		clear "Dreadhand 3: offered"
+		clear "Dreadhand 2: Hyperdrive Inhibitor: offered"
+		clear "Dreadhand 2: Hyperdrive Inhibitor: done"
+		clear "Dreadhand 2: Jump Drive Inhibitor: offered"
+		clear "Dreadhand 2: Jump Drive Inhibitor: done"
+		clear "Dreadhand 2: Hyperjump Inhibitor: offered"
+		clear "Dreadhand 2: Hyperjump Inhibitor: done"
+		clear "Dreadhand 2: Flee Haven: offered"
+		event "dreadhand fight ends"
+		fail
+
+		
+ship "Shield Beetle" "Shield Beetle (Dreadhand)"
+	"uncapturable"
+	name "The Dreadhand"
+	attributes
+		category "Heavy Warship"
+		"cost" 17900000
+		"shields" 32000
+		"hull" 9800
+		"required crew" 47
+		"bunks" 95
+		"mass" 650
+		"drag" 8.8
+		"heat dissipation" .60
+		"fuel capacity" 500
+		"cargo space" 142
+		"outfit space" 798
+		"weapon capacity" 333
+		"engine capacity" 150
+		"self destruct" .5
+		weapon
+			"blast radius" 480
+			"shield damage" 20000
+			"hull damage" 30000
+			"hit force" 1800
+	outfits
+		"Matrix Gun" 6
+		"Stasis Snare"
+		"Boulder Reactor" 3
+		"Pebble Core" 1
+		"Large Etheric Web" 2
+		"Matrix Amplifier" 4
+		"A520 Atomic Thruster"
+		"A525 Atomic Steering"
+		"Hyperdrive"
+		"Outfits Expansion" 6
+		"Fragmentation Grenades" 95
+		"Nerve Gas" 80
+		
+	engine -44 133
+	engine -15 133
+	engine 15 133
+	engine 44 133
+	gun -22 -102 "Matrix Gun"
+	gun 22 -102 "Matrix Gun"
+	gun -49 -38 "Matrix Gun"
+	gun 49 -38 "Matrix Gun"
+	gun -34 -68 "Matrix Gun"
+	gun 34 -68 "Matrix Gun"
+	gun -61 -14
+	gun 61 -14
+	turret -57 75 "Stasis Snare"
+	turret 57 75
+	turret -39 48
+	turret 39 48
+	explode "trin large explosion" 8
+	explode "trin nuke explosion" 1
+	"final explode" "final explosion large"
+	
+government "The Dreadhand"
+	swizzle 1
+	"player reputation" -1000
+	"hostile hail" "dreadhand hail"
+	"hostile disabled hail" "dreadhand disabled hail"
+	"attitude toward"
+		"Pirate" .01
+		"Bounty Hunter" -.01	
+		"Independent" -.01
+		"Merchant" -.01
+		"Navy Intelligence" -.01
+		"Navy (Oathkeeper)" -.01
+		"Pirate" .01
+		"Republic" -.01
+		
+phrase "dreadhand hail"
+	word 
+		"My combat rating is 'terror of the galaxy', kid. What's yours?"
+		"I've killed so many I've lost count. But it never stops being FUN."
+		"You'd better at least provide a challenge..."
+		"I've never lost a fight in my life. Can you say the same?"
+		"How entertaining..."
+		"My power is unimaginable. You're nothing to me."
+		"Wish you'd stayed at home? Yeah, I thought so."
+		"Are there no challenges left?"
+		"I will kill you. I will kill you ALL!"
+	
+phrase "dreadhand hail"
+	word 
+		"This is the END for you, you gutter crawling cur!"
+		"Now I know what filth and stupidity really are."
+		"Every word you say to me is stupid."
+		"I've got a long, sharp lesson for you to learn today."
+		"I will milk every drop of blood from your body!"
+		"My name is feared in every dirty corner of the North!"
+		"No one will ever catch ME fighting as badly as you do."
+		"There are no clever moves that can help you now."
+	
+phrase "dreadhand disabled hail"
+	word 
+		"This... isn't possible. How have you done this?"
+		"How did you beat me? The powers I wield... this can't be."
+		"This isn't over. This can't be over."
+		"Ensign, get those systems back online NOW! I will not lose to this- (transmission cut)"
+		"(There is no response to your hail.)"
+
+	
+mission "Dreadhand 1"
+	name "Respond to Challenge"
+	description "The pirate known as the Dreadhand has challenged you to a duel in <system>. If you accept, land alone at <planet>."
+	clearance `"You the one the Dreadhand's gonna turn into dust? Come on down, we're not missing this."`
+	landing
+	to offer
+		"combat rating" > 22000
+	source
+		government Republic Syndicate
+		near Arneb 4 11
+	destination Haven
+		
+	on offer
+		conversation
+			`As you land at <origin>, you receive a message from an unfamiliar origin:`
+			``
+			`	"<first> <last>, the New Boston runt. You've made a bit of a name for yourself out there. But I know your type. Think you're a big fish 'cause you swim in a small pond. You ain't.`
+			`	Here's the deal, farmboy. I'm Garath Almeida, the Dreadhand, pirate lord of Haven, reaver of the North, and a real shark, not some bottom feeding scum like you.`
+			`	If you're the chicken I reckon you are, run to the Rim and stay out of my turf. But if you want to see what a real pilot can do, come to Haven. Alone. If proving you're not just another Dirt Belt yokel ain't enough for you, my loot's yours for the taking.`
+			`	That is, if you can take it from my cold, dead hands.`
+			`			Come get some,`
+			`				Garath Almeida, the Dreadhand"`
+			``
+			`	It seems your activities have made you a new enemy. Showing up at a pirate stronghold without a fleet at your back might be your last bad idea, but the alternative is ignoring this insult.
+			`(If you mean to accept the challenge, you should take a snapshot of your game before landing at Haven. You may abort the mission to ignore the challenge.)`
+				accept
+				
+	on visit
+		conversation
+			`As your fleet comes in to final approach on <planet>, you pick up a message from the spaceport below. It's from the Dreadhand.`
+			`"You too scared to fight me alone, eh? There's not an ounce of courage in your inbred backwater bones, is there? Don't come back unless you're ready to face me."`
+	
+	to complete
+		"ships: independent" == 1	
+	on complete
+		event "dreadhand fight begins"
+		
+	
+event "dreadhand fight begins"
+	system "Arneb"
+		fleet clear
+		music "Vindsvept - Thorns (Bonus Track)"
+
+event "dreadhand fight ends"
+	system "Arneb"
+		fleet "Small Northern Pirates" 400
+		fleet "Large Northern Pirates" 500
+		fleet "Large Republic" 15000
+		music clear
+		
+		
+mission "Dreadhand 2"
+	name "Defeat the Dreadhand"
+	description "The Dreadhand's ship, the Crown of Thorns, is on orbit above <planet>. Destroy it, finish the duel, and return to the surface."
+	infiltrating
+	landing
+	to offer
+		has "Dreadhand 1: done"
+	source Haven
+		
+	on offer
+		conversation
+			`Few captains would show up to a duel deep in pirate territory, let alone without a fleet at your back. But few captains are <first> <last>.`
+			`	Whatever confidence you might have, though, the pirates of <planet> don't share it. Though you get no trouble from them - seemingly, none dare interfere with the Dreadhand's mark - they're upfront about expecting you to be dead within the hour.			
+			`	You find out a little about the Dreadhand: nobody seems to know his origins, but he's been raiding the Far North for the last ten years. The Navy have tried many times to stop him, and if a man in a bar is to be believed, he's personally destroyed five Navy battle groups. Then again, someone else says seven. Another twelve. The stories seem to blend into legend, and you're not sure what's true.`
+			branch knowhai nohai
+				has "Discovered Hai Space: offered"
+			
+			label knowhai
+			`	One story is consistent, though. Apparently, he went missing for half a year ago on a raid near Rajak. He was thought dead or captured, yet returned at the helm of a new ship: the Crown of Thorns. From the description, it seems he found the wormhole to the Hai, and somehow convinced them to sell him a Shield Beetle.`
+				goto fight
+			
+			label nohai
+			`	One story is consistent, though. Apparently, he went missing for half a year ago on a raid near Rajak. He was thought dead or captured, yet returned at the helm of a new ship: the Crown of Thorns. From the description, it's like nothing you've ever encountered. The pirates seem to think it's not even human in origin.`			
+				goto fight
+				
+			label fight
+			`	Nobody seems to tell you, however, where you might find the man himself. After about half an hour, you get your answer on your communicator.`
+			``
+			`	"Heard enough what you're gettin' yourself into? Too late to run back to the Dirt Belt, kid. Get your precious little <ship> up here, we've got the system to ourselves."`
+			``
+			`	As if on cue, pirates in the vicinity reach for their blasters. Seems they're here to provide incentive.`
+			`	Time to get back to your <ship>. Quickly.`
+				launch
+
+	npc kill
+		government "The Dreadhand"
+		system "Arneb"
+		personality heroic nemesis vindictive staying
+		ship "Shield Beetle (Dreadhand)" "The Crown of Thorns"
+		
+	on enter "Arneb"
+		dialog "As you screech out of the spaceport and into the endless sky above, your ship's systems pick up an oddity. Your jump capabilities are registering a fault. You set a diagnostic running, but it doesn't look like you're going to be leaving Arneb any time soon..."
+				
+	on complete
+		event "dreadhand fight ends"
+		
+		
+mission "Dreadhand 3"
+	invisible
+	landing
+	to offer
+		has "Dreadhand 2: done"
+	source Haven
+		
+	on offer
+		conversation
+			`<planet>'s guns are trained on you as descend into low orbit, and you soon find out why. Your sensors pick up the Dreadhand's escape pod on the far side of the desert world: they seem to expect you to finish the duel.`
+			
+			branch 1hai 1nohai
+				has "Discovered Hai Space: offered"	
+				
+			label 1hai
+			branch 1hai_trin 1hai_notrin
+				has "encountered the trin"
+			
+			label 1nohai
+			branch 1nohai_trin 1nohai_notrin
+				has "encountered the trin"
+			
+			label 1hai_trin
+			`	Flying around the planet, you train your sensors on the Dreadhand's escape pod. While the Crown of Thorns was clearly a heavily modified Hai Shield Beetle, the escape pod is something else entirely.`
+			`	You're no stranger to Trin technology, and the crashed pod is quite obviously Trin in origin. It seems the Dreadhand obtained more than just some Trin weapons for his ship.`
+				goto 2
+			
+			label 1hai_notrin
+			`	Flying around the planet, you train your sensors on the Dreadhand's escape pod. While the Crown of Thorns was clearly a heavily modified Hai Shield Beetle, the escape pod is something else entirely.`		
+			`	You've never seen readings like this. Different alien technology, certainly. Could this explain the strange weapons the Dreadhand's ship was using?`	
+				goto 2
+			
+			label 1nohai_trin
+			`	Flying around the planet, you train your sensors on the Dreadhand's escape pod. Although you didn't recognise the ship class of the Crown of Thorns, the technology it used - and the technology of this escape pod - are clearly familiar to you.`
+			`	It's Trin. The Dreadhand has obtained some very powerful technology indeed.`
+				goto 2
+			
+			label 1nohai_notrin
+			`	Flying around the planet, you train your sensors on the Dreadhand's escape pod. The sensor readings suggest it is clearly alien in origin, but that's no surprise: the ship that launched it was clearly alien itself. You can but wonder how he obtained such powerful technology, and if the Republic knows about this.`	
+			
+			label 2
+			`	You could obliterate the escape pod safely from orbit, or you could land your <ship> nearby and finish the fight face-to-face. While less safe, it would give you the opportunity to take the loot he's flaunted.`
+			choice
+				`	(Approach on foot.)`
+					goto confront
+				`	(Bombard the escape pod.)`
+					goto bombard
+			
+			label confront
+			
+			branch 2trin 2notrin
+				has "encountered the trin"
+				
+			label 2trin
+			`	The escape pod is a spherical shell about three metres across. It lies in a depression in a rocky desert, cracked open. The external material is a blue-grey composite you recognise from Trin ships. Where the shell has cracked, a translucent gel has leaked out from underneath, and an opening large enough to walk through is curtained by long globules of the goo dripping in slow motion.`
+			`	Unsurprisingly, you notice the Trin composites were completely unharmed by re-entry. The shell has cracked open along a straight line, through a reinforced patchwork of human armour that burned up. Someone cut this shell open, long before it was patched together as an escape pod. You've never seen the Trin use an escape pod, so what was this before?`
+				goto 3
+			
+			label 2notrin
+			`	The escape pod is a spherical shell about three metres across. It lies in a depression in a rocky desert, cracked open. The external material is a blue-grey composite you don't recognise, but which doesn't look human. Where the shell has cracked, a translucent gel has leaked out from underneath, and an opening large enough to walk through is curtained by long globules of the goo dripping in slow motion.`
+			`	Surprisingly, you notice the alien composites were completely unharmed by re-entry. The shell has cracked open along a straight line, through a reinforced patchwork of human armour that burned up. Someone cut this shell open, long before it was patched together as an escape pod. Was this even originally an escape pod?`
+				goto 3
+				
+			label 3
+			`	You have only a moment to react when a bearded figure lurches out of the opening, blaster in hand and a frenzied look in his eyes.`
+			choice
+				`	(Shoot him in the head.)`
+					goto 3head
+				`	(Shoot his blaster away.)`
+					goto 3blaster
+				`	(Hesitate.)`
+					goto 3hesitate	
+
+			label 3head
+			`	Charitably, you might imagine he might've been quicker under different circumstances. But he moves like a man already half dead, and the frenzy in his eyes - something... not quite right - seems to put him even further off balance.`
+			`	You have no trouble shooting first, and with one shot to his head you end him. Garath Almeida, the so-called Dreadhand, is dead.`
+				goto kill_and_loot
+				
+			label kill_and_loot
+			
+			label 3blaster
+				decline
+			
+			
+			label 3hesitate
+			apply
+				set "battle-scarred"
+				
+			`	You reach for your gun, but you're too slow. You think you hear a click a moment before a sonic boom, and all at once you seem to lose your vision, your hearing, your balance... you think you're falling.`
+			`	Even as you collapse, you're dimly aware that your fingers found your own gun. Did you fire back...? You can't-`
+			
+			choice
+				`	(Open your eyes.)`
+				
+			`	At first you feel like an hour has passed, but it turns out to only have been a moment. You're on your knees, blood spattered across your left eye. Your right ear rings with the aftermath, but your left is strangely silent. You touch it and soon find out why. The left side of your face is...`
+			`	...you feel a bit sick thinking about it. Instead, you turn your attention to surprisingly short, thickly bearded man you know as the Dreadhand. It turns out you did fire back, as he's lying against the outside of his escape pod, clutching his chest, and at the point of death. Twice. You must've shot twice. His gun arm, and his chest.`
+			choice
+				`	(Finish him off.)`
+					goto 4hesitate_kill
+				`	(Talk to him.)`
+					goto 4hesitate_talk
+
+			label 4hesitate_kill
+			`	You might have lost half of your face, but the Dreadhand is about to lose all of his. Your right ear is still ringing as you take a third shot, all but decapitating him. Garath Almeida, the so-called Dreadhand, is dead.`
+				goto kill_and_loot			
+			
+			label 4hesitate_talk
+
+				
+			label bombard
+			`	The firepower of <ship> destroyed the Crown of Thorns, and it has no trouble finishing off the Dreadhand's escape pod.`
+			`	The deed is done: Garath Almeida, the so-called Dreadhand, is dead. With the duel complete, you're free to go about your business. And perhaps pirates will think twice about crossing you in the future...`
+				decline
+			
+
+		
+outfit "Hyperdrive Inhibitor"
+	category "Systems"
+	cost 400000
+	tags human pirate
+	thumbnail "outfit/unknown"
+	"hyperdrive" -1
+	description "This tiny device, once attached to an inconspicuous part of a ship's hull, is able to prevent the ship from performing a jump. Cunningly, they don't actually make the jump physically impossible: instead, they just trick a ship's flight subroutines into thinking it is."
+	
+outfit "Jump Drive Inhibitor"
+	category "Systems"
+	cost 750000
+	tags human pirate
+	thumbnail "outfit/unknown"
+	"jump drive" -1
+	description "This tiny device, once attached to an inconspicuous part of a ship's hull, is able to prevent the ship from performing a jump. Cunningly, they don't actually make the jump physically impossible: instead, they just trick a ship's flight subroutines into thinking it is."
+	
+outfit "Hyperjump Inhibitor"
+	category "Systems"
+	cost 800000
+	tags human pirate
+	thumbnail "outfit/unknown"
+	"hyperdrive" -1
+	"jump drive" -1
+	description "This tiny device, once attached to an inconspicuous part of a ship's hull, is able to prevent the ship from performing a jump. Cunningly, they don't actually make the jump physically impossible: instead, they just trick a ship's flight subroutines into thinking it is."
+
+	
+mission "Dreadhand 2: Hyperdrive Inhibitor"
+	invisible
+	landing
+	to offer
+		has "Dreadhand 1: done"
+		not "Dreadhand 2: done"
+		has "tag: hyperdrive"
+		not "tag: jump drive"
+	source
+		system "Arneb"
+	on offer
+		outfit "Hyperdrive Inhibitor" 1
+	to complete
+		has "Dreadhand 2: done"
+	on complete
+		outfit "Hyperdrive Inhibitor" -1
+		
+mission "Dreadhand 2: Jump Drive Inhibitor"
+	invisible
+	landing
+	to offer
+		has "Dreadhand 1: done"
+		not "Dreadhand 2: done"
+		has "tag: jump drive"
+		not "tag: hyperdrive"
+	source
+		system "Arneb"	
+	on offer
+		outfit "Jump Drive Inhibitor" 1	
+	to complete
+		has "Dreadhand 2: done"
+	on complete
+		outfit "Jump Drive Inhibitor" -1		
+		
+mission "Dreadhand 2: Hyperjump Inhibitor"
+	invisible
+	landing
+	to offer
+		has "Dreadhand 1: done"
+		not "Dreadhand 2: done"
+		has "tag: jump drive"
+		has "tag: hyperdrive"
+	source
+		system "Arneb"
+	on offer
+		outfit "Hyperjump Inhibitor" 1
+	to complete
+		has "Dreadhand 2: done"
+	on complete
+		outfit "Hyperjump Inhibitor" -1	
+		
+mission "Dreadhand 2: Flee Haven"
+	invisible
+	repeat
+	landing
+	to offer
+		has "Dreadhand 2: active"
+	source
+		system "Arneb"		
+	on offer
+		conversation
+			`As you re-enter into the atmosphere of Haven, your ship's sensors alert you that weapons from both above and below are trained on you. It isn't going to be safe to land back at Haven without first destroying the Dreadhand and finishing the duel.`
+				flee	
+
+				
+###############################################################################
 # HAI RESEARCH                                                                #
 ###############################################################################	
 
@@ -353,290 +795,3 @@ mission "Meet the Restored Trin Queen"
 		conversation
 			`Placeholder.`
 		fail	
-
-	
-###############################################################################
-# THE DREADHAND                                                               #
-###############################################################################	
-
-mission "*DEBUG* Dreadhand's Challenge"
-	name "*DEBUG* Clear Dreadhand's Challenge"
-	description "Accept this mission to clear all conditions related to the Dreadhand's Challenge storyline."
-	repeat
-	deadline 1
-	job
-	source
-		planet Haven Freedom Farpoint Shroud
-	to offer
-		has "The Dreadhand's Challenge: offered"
-		
-	on accept
-		clear "Dreadhand 1: offered"
-		clear "Dreadhand 1: done"
-		clear "Dreadhand 2: offered"
-		clear "Dreadhand 2: done"
-		clear "Dreadhand 3: offered"
-		clear "Dreadhand 2: Hyperdrive Inhibitor: offered"
-		clear "Dreadhand 2: Hyperdrive Inhibitor: done"
-		clear "Dreadhand 2: Jump Drive Inhibitor: offered"
-		clear "Dreadhand 2: Jump Drive Inhibitor: done"
-		clear "Dreadhand 2: Hyperjump Inhibitor: offered"
-		clear "Dreadhand 2: Hyperjump Inhibitor: done"
-		clear "Dreadhand 2: Flee Haven: offered"
-
-		event "dreadhand fight ends"
-		fail
-
-		
-ship "Shield Beetle" "Shield Beetle (Dreadhand)"
-	"uncapturable"
-	name "The Dreadhand"
-	attributes
-		category "Heavy Warship"
-		"cost" 17900000
-		"shields" 32000
-		"hull" 9800
-		"required crew" 47
-		"bunks" 95
-		"mass" 650
-		"drag" 8.8
-		"heat dissipation" .60
-		"fuel capacity" 500
-		"cargo space" 142
-		"outfit space" 798
-		"weapon capacity" 333
-		"engine capacity" 150
-		"self destruct" .5
-		weapon
-			"blast radius" 480
-			"shield damage" 20000
-			"hull damage" 30000
-			"hit force" 1800
-	outfits
-		"Matrix Gun" 6
-		"Stasis Snare"
-		"Strangelet Cluster" 5
-		"Large Etheric Web" 2
-		"Matrix Amplifier" 4
-		"A520 Atomic Thruster"
-		"A525 Atomic Steering"
-		"Hyperdrive"
-		"Mass Expansion" 7
-		"Small Radar Jammer"
-		"Fragmentation Grenades" 95
-		"Nerve Gas" 80
-		
-	engine -44 133
-	engine -15 133
-	engine 15 133
-	engine 44 133
-	gun -22 -102 "Matrix Gun"
-	gun 22 -102 "Matrix Gun"
-	gun -49 -38 "Matrix Gun"
-	gun 49 -38 "Matrix Gun"
-	gun -34 -68 "Matrix Gun"
-	gun 34 -68 "Matrix Gun"
-	gun -61 -14
-	gun 61 -14
-	turret -57 75 "Stasis Snare"
-	turret 57 75
-	turret -39 48
-	turret 39 48
-	explode "trin large explosion" 8
-	explode "trin nuke explosion" 1
-	"final explode" "final explosion large"
-	
-government "The Dreadhand"
-	swizzle 1
-	"player reputation" -1000
-	"hostile hail" "dreadhand hail"
-	"hostile disabled hail" "dreadhand disabled hail"
-	"attitude toward"
-		"Pirate" .01
-		"Bounty Hunter" -.01	
-		"Independent" -.01
-		"Merchant" -.01
-		"Navy Intelligence" -.01
-		"Navy (Oathkeeper)" -.01
-		"Pirate" .01
-		"Republic" -.01
-		
-mission "Dreadhand 1"
-	name "Respond to Challenge"
-	description "The pirate known as the Dreadhand has challenged you to a duel in <system>. If you accept, land alone at <planet>."
-	clearance `"You the one the Dreadhand's gonna turn into dust? Come on down, we're not missing this."`
-	landing
-	to offer
-		"combat rating" > 22000
-	source
-		government Republic Syndicate
-		near Arneb 4 11
-	destination Haven
-		
-	on offer
-		conversation
-			`As you land at <origin>, you receive a message from an unfamiliar origin:`
-			``
-			`	"<first> <last>, the New Boston runt. You've made a bit of a name for yourself out there. But I know your type. Think you're a big fish 'cause you swim in a small pond. You ain't.`
-			`	Here's the deal, farmboy. I'm Garath Almeida, the Dreadhand, pirate lord of Haven, reaver of the North, and a real shark, not some bottom feeding scum like you.`
-			`	If you're the chicken I reckon you are, run to the Rim and stay out of my turf. But if you want to see what a real pilot can do, come to Haven. Alone. If proving you're not just another Dirt Belt yokel ain't enough for you, my loot's yours for the taking.`
-			`	That is, if you can take it from my cold, dead hands.`
-			`			Come get some,`
-			`				Garath Almeida, the Dreadhand"`
-			``
-			`	It seems your activities have made you a new enemy. Showing up at a pirate stronghold without a fleet at your back might be your last bad idea, but the alternative is ignoring this insult.
-			`(If you mean to accept the challenge, you should take a snapshot of your game before landing at Haven. You may abort the mission to ignore the challenge.)`
-				accept
-				
-	on visit
-		conversation
-			`As your fleet comes in to final approach on <planet>, you pick up a message from the spaceport below. It's from the Dreadhand.`
-			``
-			`You too scared to fight me alone, eh? You think I'd not notice? Can't believe I expected better of t
-	
-	to complete
-		"ships: independent" == 1	
-	on complete
-		event "dreadhand fight begins"
-		
-	
-event "dreadhand fight begins"
-	system "Arneb"
-		fleet clear
-		music "Vindsvept - Thorns (Bonus Track)"
-
-event "dreadhand fight ends"
-	system "Arneb"
-		fleet "Small Northern Pirates" 400
-		fleet "Large Northern Pirates" 500
-		fleet "Large Republic" 15000
-		music clear
-		
-		
-mission "Dreadhand 2"
-	name "Defeat the Dreadhand"
-	description "TBD"
-	infiltrating
-	landing
-	to offer
-		has "Dreadhand 1: done"
-	source Haven
-		
-	on offer
-		conversation
-			`TBD`
-				launch
-
-	npc kill
-		government "The Dreadhand"
-		system "Arneb"
-		personality heroic nemesis vindictive staying
-		ship "Shield Beetle (Dreadhand)" "The Crown of Thorns"
-				
-	on complete
-		event "dreadhand fight ends"
-		
-		
-mission "Dreadhand 3"
-	invisible
-	landing
-	to offer
-		has "Dreadhand 2: done"
-	source Haven
-		
-	on offer
-		payment 12000000
-		conversation
-			`TBD`
-				decline
-				
-		
-		
-outfit "Hyperdrive Inhibitor"
-	category "Systems"
-	cost 400000
-	tags human pirate
-	thumbnail "outfit/unknown"
-	"hyperdrive" -1
-	description "This tiny device, once attached to an inconspicuous part of a ship's hull, is able to prevent the ship from performing a jump. Cunningly, they don't actually make the jump physically impossible: instead, they just trick a ship's flight subroutines into thinking it is."
-	
-outfit "Jump Drive Inhibitor"
-	category "Systems"
-	cost 750000
-	tags human pirate
-	thumbnail "outfit/unknown"
-	"jump drive" -1
-	description "This tiny device, once attached to an inconspicuous part of a ship's hull, is able to prevent the ship from performing a jump. Cunningly, they don't actually make the jump physically impossible: instead, they just trick a ship's flight subroutines into thinking it is."
-	
-outfit "Hyperjump Inhibitor"
-	category "Systems"
-	cost 800000
-	tags human pirate
-	thumbnail "outfit/unknown"
-	"hyperdrive" -1
-	"jump drive" -1
-	description "This tiny device, once attached to an inconspicuous part of a ship's hull, is able to prevent the ship from performing a jump. Cunningly, they don't actually make the jump physically impossible: instead, they just trick a ship's flight subroutines into thinking it is."
-
-mission "Dreadhand 2: Hyperdrive Inhibitor"
-	invisible
-	landing
-	to offer
-		has "Dreadhand 1: done"
-		not "Dreadhand 2: done"
-		has "tag: hyperdrive"
-		not "tag: jump drive"
-	source
-		system "Arneb"
-	on offer
-		outfit "Hyperdrive Inhibitor" 1
-	to complete
-		has "Dreadhand 2: done"
-	on complete
-		outfit "Hyperdrive Inhibitor" -1
-		
-mission "Dreadhand 2: Jump Drive Inhibitor"
-	invisible
-	landing
-	to offer
-		has "Dreadhand 1: done"
-		not "Dreadhand 2: done"
-		has "tag: jump drive"
-		not "tag: hyperdrive"
-	source
-		system "Arneb"	
-	on offer
-		outfit "Jump Drive Inhibitor" 1	
-	to complete
-		has "Dreadhand 2: done"
-	on complete
-		outfit "Jump Drive Inhibitor" -1		
-		
-mission "Dreadhand 2: Hyperjump Inhibitor"
-	invisible
-	landing
-	to offer
-		has "Dreadhand 1: done"
-		not "Dreadhand 2: done"
-		has "tag: jump drive"
-		has "tag: hyperdrive"
-	source
-		system "Arneb"
-	on offer
-		outfit "Hyperjump Inhibitor" 1
-	to complete
-		has "Dreadhand 2: done"
-	on complete
-		outfit "Hyperjump Inhibitor" -1	
-		
-mission "Dreadhand 2: Flee Haven"
-	invisible
-	repeat
-	landing
-	to offer
-		has "Dreadhand 2: active"
-	source
-		system "Arneb"		
-	on offer
-		conversation
-			`As you re-enter into the atmosphere of Haven, your ship's sensors alert you that weapons from both above and below are trained on you. It isn't going to be safe to land back at Haven without first destroying the Dreadhand and finishing the duel.`
-				flee	
