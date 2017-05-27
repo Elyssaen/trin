@@ -186,6 +186,7 @@ ship "Trin Piranha" "Trin Piranha (Killer)"
 ship "Trin Raja"
 	sprite "ship/trin raja"
 		rewind
+		"frame rate" 15
 	attributes
 		category "Interceptor"
 		tags alien trin
