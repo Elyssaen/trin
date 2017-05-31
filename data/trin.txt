@@ -44,7 +44,24 @@ government "Trin"
 		"Wanderer" -.01
 		"Coalition" -.01
 		"Heliarch" -.01
+		
+government "Trin Bounty"
+	swizzle 0
+	color 0 .75 0
+	language "Trin"
+	"player reputation" -1
+	"penalty for"
+		assist 0
+		disable 0
+		board 0
+		capture 0
+		destroy 0
+		atrocity 0
 
+government "Quarg"
+	"attitude toward"
+		"Trin" -.01
+		"Trin Bounty" -.01
 	
 ###############################################################################
 # SHIP NAMES                                                                  #
@@ -179,7 +196,7 @@ phrase "trin kagriri branch"
 		"Vrinit"
 		"Dasos"
 		"Meeli"
-		"Mrandu"
+		"Mrindu"
 		"Fee"
 
 phrase "trin kagriri branch short"
@@ -219,7 +236,8 @@ phrase "trin title"
 		"free"
 		"kri"
 		"gren"
-		"grun"
+		"gran"
+		"grin"
 		"gu"
 		"neen"
 		"tal"
@@ -375,12 +393,88 @@ phrase "trin number"
 # FLEETS                                                                      #
 ###############################################################################
 
+################
+# Kagriri Sept #
+################
+
+fleet "Trin Kagriri Small"
+	government "Trin"
+	names "trin capital kagriri"
+	fighters "trin fighter kagriri"
+	personality
+		heroic murderous mute
+	variant 2
+		"Trin Raja (Fallen)" 1
+	variant 1
+		"Trin Raja (Killer)" 1		
+		
+		
+fleet "Trin Kagriri Medium"
+	government "Trin"
+	names "trin capital kagriri"
+	fighters "trin fighter kagriri"
+	personality
+		heroic murderous mute
+	variant
+		"Trin Chimaera (Fallen)" 1
+	variant
+		"Trin Chimaera (Snaring)" 1
+	variant
+		"Trin Raja (Fallen)" 3
+	variant
+		"Trin Raja (Fallen)" 2
+		"Trin Raja (Killer)" 1
+	variant
+		"Trin Raja (Fallen)" 1
+		"Trin Raja (Killer)" 2	
+	variant
+		"Trin Raja (Fallen)" 2
+		"Trin Piranha" 5
+	variant
+		"Trin Raja (Fallen)" 2
+		"Trin Piranha (Killer)" 3
+		"Trin Piranha" 2				
+	variant
+		"Trin Raja (Fallen)" 1
+		"Trin Raja (Killer)" 1
+		"Trin Piranha" 3	
+
+fleet "Trin Kagriri Large"
+	government "Trin"
+	names "trin capital kagriri"
+	fighters "trin fighter kagriri"
+	personality
+		heroic murderous mute
+	variant
+		"Trin Mako (Fallen)" 1
+		"Trin Piranha" 6
+	variant
+		"Trin Mako (Trapper)" 1
+		"Trin Piranha" 6	
+	variant
+		"Trin Mako (Fallen)" 1
+		"Trin Piranha" 3
+		"Trin Piranha (Killer)" 3
+	variant
+		"Trin Chimaera (Fallen)" 1
+		"Trin Raja (Fallen)" 2
+	variant
+		"Trin Chimaera (Snaring)" 1
+		"Trin Raja (Fallen)" 2
+	variant
+		"Trin Chimaera (Fallen)" 1
+		"Trin Raja (Killer)" 2
+	variant
+		"Trin Chimaera (Snaring)" 1
+		"Trin Raja (Fallen)" 1
+		"Trin Raja (Killer)" 1
+		
 fleet "Trin Kagriri Raid"
 	government "Trin"
 	names "trin capital kagriri"
 	fighters "trin fighter kagriri"
 	personality
-		heroic frugal mute
+		heroic murderous mute
 	variant 2
 		"Trin Antiarch (Fallen)"
 		"Trin Piranha" 10
@@ -409,13 +503,17 @@ fleet "Trin Kagriri Raid"
 		"Trin Chimaera (Fallen)" 2
 		"Trin Marlin (Fallen)" 6
 
+
+##############
+# Lranu Sept #
+##############
 		
 fleet "Trin Lranu Raid"
 	government "Trin"
 	names "trin capital lranu"
 	fighters "trin fighter lranu"
 	personality
-		heroic plunders mute
+		heroic plunders murderous mute
 	variant 1
 		"Trin Antiarch (Empyreal)"
 		"Trin Piranha" 6
@@ -438,12 +536,16 @@ fleet "Trin Lranu Raid"
 		"Trin Marlin (Reaper)" 4
 
 		
+#############
+# Maru Sept #
+#############
+
 fleet "Trin Maru Raid"
 	government "Trin"
 	names "trin capital maru"
 	fighters "trin fighter maru"
 	personality
-		heroic unconstrained mute
+		heroic unconstrained murderous mute
 	variant 4
 		"Trin Mako (Mortar)"
 		"Trin Piranha" 6
@@ -472,12 +574,92 @@ fleet "Trin Maru Raid"
 		"Trin Raja (Fallen)" 4
 
 		
+################
+# Destanu Sept #
+################
+
+fleet "Trin Destanu Small"
+	government "Trin"
+	names "trin destanu"
+	fighters "trin destanu"
+	personality
+		heroic vindictive murderous mute
+	variant 2
+		"Trin Raja (Fallen)" 1
+	variant 1
+		"Trin Raja (Reaper)" 1			
+		
+fleet "Trin Destanu Medium"
+	government "Trin"
+	names "trin destanu"
+	fighters "trin destanu"
+	personality
+		heroic vindictive murderous mute
+	variant
+		"Trin Chimaera (Fallen)" 1
+	variant
+		"Trin Chimaera (Killer)" 1
+	variant
+		"Trin Chimaera (Ghosting)" 1
+		" Trin Chimaera " 2
+	variant
+		"Trin Raja (Fallen)" 3
+	variant
+		"Trin Raja (Fallen)" 2
+		"Trin Raja (Reaper)" 1
+	variant
+		"Trin Raja (Fallen)" 1
+		"Trin Raja (Reaper)" 2	
+	variant
+		"Trin Raja (Fallen)" 2
+		"Trin Piranha" 5
+	variant
+		"Trin Raja (Fallen)" 2
+		"Trin Piranha (Killer)" 3
+		"Trin Piranha" 2				
+	variant
+		"Trin Raja (Fallen)" 1
+		"Trin Raja (Reaper)" 1
+		"Trin Piranha" 3	
+
+fleet "Trin Destanu Large"
+	government "Trin"
+	names "trin destanu"
+	fighters "trin destanu"
+	personality
+		heroic vindictive murderous mute
+	variant
+		"Trin Mako (Fallen)" 1
+		"Trin Piranha" 6
+	variant
+		"Trin Mako (Close)" 1
+		"Trin Piranha" 6	
+	variant
+		"Trin Mako (Trapper)" 1
+		"Trin Piranha" 3
+		"Trin Piranha (Killer)" 3
+	variant
+		"Trin Chimaera (Fallen)" 1
+		"Trin Raja (Fallen)" 2
+	variant
+		"Trin Chimaera (Ghosting)" 1
+		" Trin Chimaera " 2
+		"Trin Raja (Fallen)" 2
+	variant
+		"Trin Chimaera (Killer)" 1
+		"Trin Raja (Killer)" 2
+	variant
+		"Trin Chimaera (Ghosting)" 1
+		" Trin Chimaera " 2
+		"Trin Raja (Fallen)" 1
+		"Trin Raja (Killer)" 1
+		
 fleet "Trin Destanu Raid"
 	government "Trin"
 	names "trin destanu"
 	fighters "trin destanu"
 	personality
-		heroic vindictive mute
+		heroic vindictive murderous mute
 	variant 2
 		"Trin Mako (Close)"
 		"Trin Piranha" 6
@@ -492,13 +674,13 @@ fleet "Trin Destanu Raid"
 		"Trin Raja (Fallen)" 6
 	variant 4
 		"Trin Chimaera (Ghosting)" 3
-		" Trin Chimaera" 6
+		" Trin Chimaera " 6
 		"Trin Raja (Fallen)" 5
 	variant 4
-		"Trin Chimaera" 2
+		"Trin Chimaera (Fallen)" 2
 		"Trin Chimaera (Killer)" 1
 		"Trin Raja (Fallen)" 5
 	variant 1
 		"Trin Chimaera (Fallen)" 3
-		"Marlin (Battery)" 3
+		"Trin Marlin (Battery)" 3
 	

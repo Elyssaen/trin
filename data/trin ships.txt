@@ -8,6 +8,7 @@ ship " Trin Chimaera "
 	plural "Trin Chimaeras"
 	sprite "ship/trin chimaera ghost"
 	"never disabled"
+	"no swizzle"
 	attributes
 		category "Drone"
 		tags alien trin 
@@ -69,6 +70,7 @@ ship " Trin Mobula "
 	plural "Trin Mobulas"
 	sprite "ship/trin mobula ghost"
 	"never disabled"
+	"no swizzle"
 	attributes
 		category "Drone"
 		tags alien trin 
@@ -134,6 +136,9 @@ ship " Trin Mobula " " Trin Mobula (No Warp)"
 
 ship "Trin Piranha"
 	sprite "ship/trin piranha"
+		"frame rate" 20
+		rewind
+	"no swizzle"
 	attributes
 		category "Fighter"
 		tags alien trin
@@ -163,9 +168,9 @@ ship "Trin Piranha"
 		"Neutron Lantern Drive"
 		"Small Etheric Web"
 	
-	engine 0 42
-	engine 0 42
-	gun 0 0 "Phase Reaper"
+	engine 0 42 .75
+	engine 0 42 .75
+	gun 0 -44 "Phase Reaper"
 	explode "trin large explosion" 1
 	"final explode" "final explosion medium"
 	description "Trin Piranhas are lightning fast and well-defended interdictor fighters. Although primarily designed to quickly swarm and overwhelm supply convoys, their piercing Phase Reapers are highly effective against capital ships not protected by Matrix Amplifiers."
@@ -185,8 +190,9 @@ ship "Trin Piranha" "Trin Piranha (Killer)"
 
 ship "Trin Raja"
 	sprite "ship/trin raja"
-		rewind
 		"frame rate" 15
+		rewind
+	"no swizzle"
 	attributes
 		category "Interceptor"
 		tags alien trin
@@ -292,7 +298,10 @@ ship "Trin Raja" "Trin Raja (Reaper)"
 # Note on 'ghost' sprites: at the moment, Trin ships that are generally equipped with a Quantum Shroud jammer refer to a 'ghost' version of their sprite which has transparency. With feature/OutfitTransparency, this shouldn't be necessary.
 
 ship "Trin Marlin"
-	sprite "ship/trin marlin ghost"
+	sprite "ship/trin marlin"
+		"frame rate" 12
+		rewind
+	"no swizzle"
 	attributes
 		category "Light Warship"
 		tags alien trin warship
@@ -330,17 +339,15 @@ ship "Trin Marlin"
 		"Trin Ramscoop"
 		"Shunt Drive"
 		
-	engine -15 78
-	engine -15 78
-	engine 15 78
-	engine 15 78
-	gun -17 -52 "Matrix Gun"
-	gun 17 -52 "Matrix Gun"
-	turret 0 -68 "Stasis Snare"
-	turret 0 20
+	engine 0 110 1
+	engine 0 110 1
+	gun -13 -74 "Matrix Gun"
+	gun 13 -74 "Matrix Gun"
+	turret 0 -25 "Stasis Snare"
+	turret 0 30
 	explode "trin large explosion" 3
 	"final explode" "final explosion medium"
-	description "Once used as everything from a courier to a patrol ship, the only Marlins seen anymore are those configured as light warships and harriers. This Marlin is able to run extremely overpowered engines, making it potentially one of the fastest ships in existence, and still has enough space for best-in-class versatility."
+	description "Once used as everything from a courier to a patrol ship, the only Marlins seen anymore are those configured as light warships and harriers. This Marlin is able to run extremely overpowered engines, making it potentially one of the fastest ships in existence, while still having enough space for best-in-class versatility."
 
 ship "Trin Marlin" "Trin Marlin (Fallen)"
 	crew 44
@@ -422,7 +429,10 @@ ship "Trin Marlin" "Trin Marlin (Mortar)"
 ###############################################################################
 
 ship "Trin Chimaera"
-	sprite "ship/trin chimaera ghost"
+	sprite "ship/trin chimaera"
+		"frame rate" 12
+		rewind	
+	"no swizzle"
 	attributes
 		category "Medium Warship"
 		tags alien trin warship
@@ -650,6 +660,7 @@ ship "Trin Chimaera" "Trin Chimaera (Ghosting)"
 		
 ship "Trin Mako"
 	sprite "ship/trin mako ghost"
+	"no swizzle"
 	attributes
 		category "Heavy Warship"
 		tags alien trin warship
@@ -804,6 +815,7 @@ ship "Trin Mako" "Trin Mako (Trapper)"
 	
 ship "Trin Antiarch"
 	sprite "ship/trin antiarch ghost"
+	"no swizzle"
 	attributes
 		category "Heavy Warship"
 		tags alien trin warship
@@ -920,6 +932,7 @@ ship "Trin Antiarch" "Trin Antiarch (Close)"
 
 ship "Trin Mobula"
 	sprite "ship/trin mobula ghost"
+	"no swizzle"
 	attributes
 		category "Heavy Warship"
 		tags alien trin warship
@@ -1046,6 +1059,7 @@ ship "Trin Mobula" "Trin Mobula (Warp)"
 
 ship "Trin Cachalot"
 	sprite "ship/trin cachalot ghost"
+	"no swizzle"
 	attributes
 		category "Heavy Freighter"
 		tags alien trin freighter

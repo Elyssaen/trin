@@ -565,36 +565,44 @@ outfit "Hunter-Killer Pod"
 	"gun ports" -1
 	"trin wellstone capacity" 8
 	weapon
-		sprite "projectile/thunderhead"
+		sprite "projectile/hunter-killer"
 			"no repeat"
 			"frame rate" .1
 		sound "thunderhead"
 		ammo "Trin Wellstone"
-		icon "icon/thunderhead"
-		"submunition" "Hunter-Killer Beam"
-		"split range" 300
+		icon "icon/hunter-killer"
+		"submunition" "Active Hunter-Killer"
 		"fire effect" "meteor fire"
-		"die effect" "hunter-killer explodes"
-		"die effect" "hunter-killer beam"
 		"hit effect" "large matrix explosion"
 		"inaccuracy" 4
 		"velocity" 8
-		"lifetime" 160
+		"lifetime" 1
 		"reload" 100
 		"burst reload" 40
 		"burst count" 4
 		"firing energy" 300
 		"firing heat" 100
 		"firing force" 50
-		"acceleration" 1.6
-		"drag" .2
-		"turn" 8
+		"missile strength" 42
+	description "Trin Hunter-Killers don't need to reach their target to deliver their payload: the hydrogen bomb they detonate instead pumps a gamma-ray laser burst. With devastating firepower and near immunity to anti-missile defences, Hunter-Killers are only hampered by their short range and inability to change course."
+	description "	This Pod launcher only has capacity for two salvos of Hunter-Killers, but is compact enough to fit on even the smallest Trin ships."
+
+outfit "Active Hunter-Killer"
+	weapon
+		sprite "projectile/hunter-killer"
+			"no repeat"
+			"frame rate" .1
+		"submunition" "Hunter-Killer Beam"
+		"split range" 300
+		"die effect" "hunter-killer explodes"
+		"die effect" "hunter-killer beam"
+		"hit effect" "large matrix explosion"
+		"lifetime" 139
+		"turn" 4
 		"homing" 2
 		"infrared tracking" .4
 		"radar tracking" .7
 		"missile strength" 42
-	description "Trin Hunter-Killers don't need to reach their target to deliver their payload: the hydrogen bomb they detonate instead pumps a gamma-ray laser burst. With devastating firepower and near immunity to anti-missile defences, Hunter-Killers are only hampered by their relatively poor homing and short range."
-	description "	This Pod launcher only has capacity for two salvos of Hunter-Killers, but is compact enough to fit on even the smallest Trin ships."
 	
 outfit "Hunter-Killer Beam"
 	weapon
@@ -621,12 +629,13 @@ outfit "Hunter-Seeker Pod"
 	"gun ports" -1
 	"trin wellstone capacity" 8
 	weapon
-		sprite "projectile/thunderhead"
+		sprite "projectile/hunter-seeker"
 			"no repeat"
 			"frame rate" .1
 		sound "thunderhead"
-		ammo "Trin Wellstone"
-		icon "icon/thunderhead"
+		ammo "Trin Wellstone" 4
+		icon "icon/hunter-seeker"
+		"stream"
 		"submunition" "Hunter-Seeker Beam"
 		"split range" 350
 		"fire effect" "meteor fire"
@@ -635,22 +644,20 @@ outfit "Hunter-Seeker Pod"
 		"hit effect" "large matrix explosion"
 		"inaccuracy" 3
 		"velocity" 12
-		"lifetime" 600
-		"reload" 75
-		"burst reload" 32
-		"burst count" 4
-		"firing energy" 450
-		"firing heat" 150
-		"firing force" 75
+		"lifetime" 2400
+		"reload" 300
+		"firing energy" 1800
+		"firing heat" 600
+		"firing force" 300
 		"acceleration" 2.1
 		"drag" .175
 		"turn" 8
 		"homing" 2
 		"infrared tracking" .9
 		"radar tracking" .9
-		"missile strength" 52
-	description "While Hunter-Seekers don't have the firepower of Hunter-Killers, they more than make up for it in speed, range and tracking. They also manage to keep their beam coherent over a slightly longer distance, making Hunter-Seekers an exceptionally reliable platform for payload delivery."
-	description "	This Pod launcher only has capacity for two salvos of Hunter-Seekers."
+		"missile strength" 210
+	description "***UPDATE*** While Hunter-Seekers don't have the firepower of Hunter-Killers, they more than make up for it in speed, range and tracking. They also manage to keep their beam coherent over a slightly longer distance, making Hunter-Seekers an exceptionally reliable platform for payload delivery."
+	description "	This Pod launcher only has capacity for two Hunter-Seekers."
 	
 outfit "Hunter-Seeker Beam"
 	weapon
@@ -661,8 +668,8 @@ outfit "Hunter-Seeker Beam"
 		"velocity" 338
 		"lifetime" 1
 		"reload" 1
-		"shield damage" 1800
-		"hull damage" 1062
+		"shield damage" 7200
+		"hull damage" 4250
 		
 ###############################################################################
 
@@ -742,6 +749,7 @@ outfit "Trin Wellstone Vessel"
 	"mass" 2
 	"outfit space" -12
 	"trin wellstone capacity" 25
+	ammo "Trin Wellstone"
 	description "Trin Pod launchers are only able to store a very small quantity of Wellstone, so most Trin ships include at least one Wellstone Vessel to increase their capacity. As well as giving the Trin additional flexibility in ship configurations, this set-up requires less total weapon capacity as Wellstone can be stored internally and pumped to Pod launchers as needed."	
 
 ###############################################################################

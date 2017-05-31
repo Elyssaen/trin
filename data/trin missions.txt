@@ -1,15 +1,11 @@
 
-
 ###############################################################################
 # RAID MISSIONS                                                               #
 ###############################################################################	
 
-# Quarg fleet sent to deal with a Trin raid.
 fleet "Quarg Reinforcement"
 	government "Quarg"
 	names "quarg"
-	personality
-		heroic vindictive
 	variant
 		"Quarg Wardragon" 4
 	variant
@@ -21,7 +17,11 @@ fleet "Quarg Reinforcement"
 		"Quarg Wardragon" 2
 		"Quarg Skylark" 3
 
-# Hai Raids
+		
+#############
+# Hai Raids # 
+#############
+
 mission "Trin Kagriri Raid the Hai"
 	deadline 1
 	invisible
@@ -29,15 +29,19 @@ mission "Trin Kagriri Raid the Hai"
 	repeat
 	landing
 	to offer
-		random <= 400
+		random <= 4
 	source
 		attributes "hai" "unfettered"
+	on accept
+		set "trin: encountered"
 	npc
 		government Trin
 		personality heroic frugal entering staying mute
 		fleet "Trin Kagriri Raid"
 	npc
 		government Quarg
+		personality	heroic forbearing vindictive murderous
+		"travel to" <system> # placeholder for future code feature, add staying once ready
 		system "Hevru Hai"
 		fleet "Quarg Reinforcement"
 		
@@ -48,20 +52,27 @@ mission "Trin Destanu Raid the Hai"
 	repeat
 	landing
 	to offer
-		random <= 400
+		random <= 4
 	source
 		attributes "hai" "unfettered"
+	on accept
+		set "trin: encountered"
 	npc kill
 		government Trin
 		personality heroic vindictive entering staying mute
 		fleet "Trin Destanu Raid"
 	npc
 		government Quarg
+		personality heroic forbearing vindictive murderous
+		"travel to" <system> # placeholder for future code feature, add staying once ready
 		system "Hevru Hai"
-		personality heroic
 		fleet "Quarg Reinforcement"	
-	
-# Efreti Raids
+
+		
+################
+# Efreti Raids #
+################
+
 mission "Trin Kagriri Raid the Efreti"
 	deadline 1
 	invisible
@@ -69,15 +80,19 @@ mission "Trin Kagriri Raid the Efreti"
 	repeat
 	landing
 	to offer
-		random <= 400
+		random <= 4
 	source
 		near "Sevrelect" 0 4
+	on accept
+		set "trin: encountered"
 	npc kill
 		government Trin
 		personality heroic frugal entering staying mute
 		fleet "Trin Kagriri Raid"	
 	npc
 		government Quarg
+		personality heroic forbearing vindictive murderous
+		"travel to" <system> # placeholder for future code feature, add staying once ready
 		system "Dokdobaru"
 		fleet "Quarg Reinforcement"
 
@@ -89,20 +104,27 @@ mission "Trin Maru Raid the Efreti"
 	repeat
 	landing
 	to offer
-		random <= 400
+		random <= 4
 	source
 		near "Sevrelect" 0 4
+	on accept
+		set "trin: encountered"
 	npc kill
 		government Trin
 		personality heroic unconstrained entering staying mute
 		fleet "Trin Maru Raid"	
 	npc
 		government Quarg
+		personality heroic forbearing vindictive murderous
+		"travel to" <system> # placeholder for future code feature, add staying once ready
 		system "Dokdobaru"
 		fleet "Quarg Reinforcement"
 
-		
-# Korath Automata Raids	
+	
+######################
+# Kor Automata Raids #
+######################
+
 mission "Trin Kagriri Raid the Korath"
 	deadline 1
 	invisible
@@ -110,9 +132,11 @@ mission "Trin Kagriri Raid the Korath"
 	repeat
 	landing
 	to offer
-		random <= 700
+		random <= 7
 	source
 		near "Mesuket" 0 4
+	on accept
+		set "trin: encountered"
 	npc kill
 		government Trin
 		personality heroic frugal entering staying mute
@@ -126,16 +150,23 @@ mission "Trin Maru Raid the Korath"
 	repeat
 	landing
 	to offer
-		random <= 700
+		random <= 7
 	source
 		near "Mesuket" 0 4
+	on accept
+		set "trin: encountered"
 	npc kill
 		government Trin
 		personality heroic unconstrained entering staying mute
 		fleet "Trin Maru Raid"	
 		
+
+##################
+# Wanderer Raids #
+##################
 		
 # Wanderer Raids: Note that the Trin do not raid while the Pug are actively defending Ap'arak. This is to prevent a Trin raid from destroying the two Arfectas defending Ap'arak, however unlikely that is. You should just assume that while the Pug are holding Ap'arak, they're also actively pre-emptively dealing with any Trin.
+
 mission "Trin Lranu Raid the Wanderers"
 	deadline 1
 	invisible
@@ -144,10 +175,12 @@ mission "Trin Lranu Raid the Wanderers"
 	landing
 	to offer
 		and
-			random <= 400
+			random <= 4
 			not "Wanderers Ap'arak 3: Pug: active"
 	source
 		attributes "wanderer"
+	on accept
+		set "trin: encountered"
 	npc kill
 		government Trin
 		personality heroic plunders entering staying mute
@@ -162,10 +195,12 @@ mission "Trin Destanu Raid the Wanderers"
 	landing
 	to offer
 		and
-			random <= 400
+			random <= 4
 			not "Wanderers Ap'arak 3: Pug: active"
 	source
 		attributes "wanderer"
+	on accept
+		set "trin: encountered"
 	npc kill
 		government Trin
 		personality heroic vindictive entering staying mute
@@ -175,6 +210,10 @@ mission "Trin Destanu Raid the Wanderers"
 ###############################################################################
 # THE DREADHAND                                                               #
 ###############################################################################	
+
+#########
+# Debug #
+#########
 
 mission "*DEBUG* Dreadhand's Challenge"
 	name "*DEBUG* Clear Dreadhand's Challenge"
@@ -203,6 +242,10 @@ mission "*DEBUG* Dreadhand's Challenge"
 		event "dreadhand fight ends"
 		fail
 
+		
+#############
+# Resources #
+#############
 		
 ship "Shield Beetle" "Shield Beetle (Dreadhand)"
 	"uncapturable"
@@ -307,8 +350,37 @@ phrase "dreadhand disabled hail"
 		"This isn't over. This can't be over."
 		"Ensign, get those systems back online NOW! I will not lose to this- (transmission cut)"
 		"(There is no response to your hail.)"
-
+		
+outfit "Hyperdrive Inhibitor"
+	category "Systems"
+	cost 400000
+	tags human pirate
+	thumbnail "outfit/unknown"
+	"hyperdrive" -1
+	description "This tiny device, once attached to an inconspicuous part of a ship's hull, is able to prevent the ship from performing a jump. Cunningly, they don't actually make the jump physically impossible: instead, they just trick a ship's flight subroutines into thinking it is."
 	
+outfit "Jump Drive Inhibitor"
+	category "Systems"
+	cost 750000
+	tags human pirate
+	thumbnail "outfit/unknown"
+	"jump drive" -1
+	description "This tiny device, once attached to an inconspicuous part of a ship's hull, is able to prevent the ship from performing a jump. Cunningly, they don't actually make the jump physically impossible: instead, they just trick a ship's flight subroutines into thinking it is."
+	
+outfit "Hyperjump Inhibitor"
+	category "Systems"
+	cost 800000
+	tags human pirate
+	thumbnail "outfit/unknown"
+	"hyperdrive" -1
+	"jump drive" -1
+	description "This tiny device, once attached to an inconspicuous part of a ship's hull, is able to prevent the ship from performing a jump. Cunningly, they don't actually make the jump physically impossible: instead, they just trick a ship's flight subroutines into thinking it is."
+
+
+#######################
+# Dreadhand Mission 1 #
+#######################
+		
 mission "Dreadhand 1"
 	name "Respond to Challenge"
 	description "The pirate known as the Dreadhand has challenged you to a duel in <system>. If you accept, land alone at <planet>."
@@ -346,7 +418,12 @@ mission "Dreadhand 1"
 	on complete
 		event "dreadhand fight begins"
 		
-	
+
+
+#######################
+# Dreadhand Mission 2 #
+#######################
+		
 event "dreadhand fight begins"
 	system "Arneb"
 		fleet clear
@@ -358,8 +435,7 @@ event "dreadhand fight ends"
 		fleet "Large Northern Pirates" 500
 		fleet "Large Republic" 15000
 		music clear
-		
-		
+			
 mission "Dreadhand 2"
 	name "Defeat the Dreadhand"
 	description "The Dreadhand's ship, the Crown of Thorns, is on orbit above <planet>. Destroy it, finish the duel, and return to the surface."
@@ -405,7 +481,76 @@ mission "Dreadhand 2"
 				
 	on complete
 		event "dreadhand fight ends"
+
+
+mission "Dreadhand 2: Hyperdrive Inhibitor"
+	invisible
+	landing
+	to offer
+		has "Dreadhand 1: done"
+		not "Dreadhand 2: done"
+		has "tag: hyperdrive"
+		not "tag: jump drive"
+	source
+		system "Arneb"
+	on offer
+		outfit "Hyperdrive Inhibitor" 1
+	to complete
+		has "Dreadhand 2: done"
+	on complete
+		outfit "Hyperdrive Inhibitor" -1
 		
+mission "Dreadhand 2: Jump Drive Inhibitor"
+	invisible
+	landing
+	to offer
+		has "Dreadhand 1: done"
+		not "Dreadhand 2: done"
+		has "tag: jump drive"
+		not "tag: hyperdrive"
+	source
+		system "Arneb"	
+	on offer
+		outfit "Jump Drive Inhibitor" 1	
+	to complete
+		has "Dreadhand 2: done"
+	on complete
+		outfit "Jump Drive Inhibitor" -1		
+		
+mission "Dreadhand 2: Hyperjump Inhibitor"
+	invisible
+	landing
+	to offer
+		has "Dreadhand 1: done"
+		not "Dreadhand 2: done"
+		has "tag: jump drive"
+		has "tag: hyperdrive"
+	source
+		system "Arneb"
+	on offer
+		outfit "Hyperjump Inhibitor" 1
+	to complete
+		has "Dreadhand 2: done"
+	on complete
+		outfit "Hyperjump Inhibitor" -1	
+		
+mission "Dreadhand 2: Flee Haven"
+	invisible
+	repeat
+	landing
+	to offer
+		has "Dreadhand 2: active"
+	source
+		system "Arneb"		
+	on offer
+		conversation
+			`As you re-enter into the atmosphere of Haven, your ship's sensors alert you that weapons from both above and below are trained on you. It isn't going to be safe to land back at Haven without first destroying the Dreadhand and finishing the duel.`
+				flee			
+
+				
+#######################
+# Dreadhand Mission 3 #
+#######################
 		
 mission "Dreadhand 3"
 	invisible
@@ -469,7 +614,8 @@ mission "Dreadhand 3"
 			`	The escape pod is a spherical shell about three metres across. It lies in a depression in a rocky desert, cracked open. The external material is a blue-grey composite you don't recognise, but which doesn't look human. Where the shell has cracked, a translucent gel has leaked out from underneath, and an opening large enough to walk through is curtained by long globules of the goo dripping in slow motion.`
 			`	Surprisingly, you notice the alien composites were completely unharmed by re-entry. The shell has cracked open along a straight line, through a reinforced patchwork of human armour that burned up. Someone cut this shell open, long before it was patched together as an escape pod. Was this even originally an escape pod?`
 				goto 3
-				
+			
+			# WIP
 			label 3
 			`	You have only a moment to react when a bearded figure lurches out of the opening, blaster in hand and a frenzied look in his eyes.`
 			choice
@@ -522,127 +668,6 @@ mission "Dreadhand 3"
 				decline
 			
 
-		
-outfit "Hyperdrive Inhibitor"
-	category "Systems"
-	cost 400000
-	tags human pirate
-	thumbnail "outfit/unknown"
-	"hyperdrive" -1
-	description "This tiny device, once attached to an inconspicuous part of a ship's hull, is able to prevent the ship from performing a jump. Cunningly, they don't actually make the jump physically impossible: instead, they just trick a ship's flight subroutines into thinking it is."
-	
-outfit "Jump Drive Inhibitor"
-	category "Systems"
-	cost 750000
-	tags human pirate
-	thumbnail "outfit/unknown"
-	"jump drive" -1
-	description "This tiny device, once attached to an inconspicuous part of a ship's hull, is able to prevent the ship from performing a jump. Cunningly, they don't actually make the jump physically impossible: instead, they just trick a ship's flight subroutines into thinking it is."
-	
-outfit "Hyperjump Inhibitor"
-	category "Systems"
-	cost 800000
-	tags human pirate
-	thumbnail "outfit/unknown"
-	"hyperdrive" -1
-	"jump drive" -1
-	description "This tiny device, once attached to an inconspicuous part of a ship's hull, is able to prevent the ship from performing a jump. Cunningly, they don't actually make the jump physically impossible: instead, they just trick a ship's flight subroutines into thinking it is."
-
-	
-mission "Dreadhand 2: Hyperdrive Inhibitor"
-	invisible
-	landing
-	to offer
-		has "Dreadhand 1: done"
-		not "Dreadhand 2: done"
-		has "tag: hyperdrive"
-		not "tag: jump drive"
-	source
-		system "Arneb"
-	on offer
-		outfit "Hyperdrive Inhibitor" 1
-	to complete
-		has "Dreadhand 2: done"
-	on complete
-		outfit "Hyperdrive Inhibitor" -1
-		
-mission "Dreadhand 2: Jump Drive Inhibitor"
-	invisible
-	landing
-	to offer
-		has "Dreadhand 1: done"
-		not "Dreadhand 2: done"
-		has "tag: jump drive"
-		not "tag: hyperdrive"
-	source
-		system "Arneb"	
-	on offer
-		outfit "Jump Drive Inhibitor" 1	
-	to complete
-		has "Dreadhand 2: done"
-	on complete
-		outfit "Jump Drive Inhibitor" -1		
-		
-mission "Dreadhand 2: Hyperjump Inhibitor"
-	invisible
-	landing
-	to offer
-		has "Dreadhand 1: done"
-		not "Dreadhand 2: done"
-		has "tag: jump drive"
-		has "tag: hyperdrive"
-	source
-		system "Arneb"
-	on offer
-		outfit "Hyperjump Inhibitor" 1
-	to complete
-		has "Dreadhand 2: done"
-	on complete
-		outfit "Hyperjump Inhibitor" -1	
-		
-mission "Dreadhand 2: Flee Haven"
-	invisible
-	repeat
-	landing
-	to offer
-		has "Dreadhand 2: active"
-	source
-		system "Arneb"		
-	on offer
-		conversation
-			`As you re-enter into the atmosphere of Haven, your ship's sensors alert you that weapons from both above and below are trained on you. It isn't going to be safe to land back at Haven without first destroying the Dreadhand and finishing the duel.`
-				flee	
-
-				
-###############################################################################
-# HAI RESEARCH                                                                #
-###############################################################################	
-
-#0: Repeatable Hai missions hunting the Trin at high enough combat rating, and after proper first contact with the Hai.
-
-#1: Board a pre-disabled Trin Piranha. Vindictive Quarg interference makes it easy to fail, but both outcomes continue the arc.
-
-#2: Capture a Trin Piranha.
-
-# Quarg Interlude: Meet a representative of the Quarg warning you not to get involved with the Trin matter.
-
-#3: Travel to another system to pick up passengers to join the research team.
-
-#4: Investigate a system (requires a Jump Drive) where Trin raids may originate from. (Will find nothing.)
-
-#5: Return to the system to place a sensor array.
-
-#6: Return to the Hai.
-
-#7: Scan a Trin Chimaera detected in aforementioned system.
-
-#8: Board a Trin Chimaera and obtain a Chimaera Black Box.
-
-#9: A set of similar missions to loot: a Trin Ramscoop, an Etheric Web, a Strangelet Cell, one larger Strangelet reactor, and a Stasis Chamber. Sell to research team. The reactor path gives access to Strangelet Adapters.
-
-#10: Board a mysteriously poorly armed Trin ship (a Cachalot) that may be a freighter, to work out why the Trin are occasionally sending ships not configured as warships to raid. Mission will end with the research team being shut down due to Quarg interference.
-
-
 ###############################################################################
 # MEBSUTA HIVE                                                                #
 ###############################################################################	
@@ -674,6 +699,362 @@ mission "Dreadhand 2: Flee Haven"
 #11B.2: Head on to Mebsuta to see what happened.
 
 #12: Return to Alnitak with Admiral Danforth and the Navy/Oathkeeper forces. Debrief.
+
+
+	
+###############################################################################
+# HAI RESEARCH                                                                #
+###############################################################################	
+
+##############################
+# Ask the Hai about the Trin #
+##############################
+
+mission "Ask the Hai about the Trin"
+	landing
+	to offer
+		has "trin: encountered"
+	source
+		government "Hai"
+		
+	on offer
+		set "trin: familiar"
+		conversation
+			`Offer conversation of Ask the Hai about the Trin.`
+				decline
+		
+		
+##################
+# Hai Research 1 #
+##################						
+
+mission "Hai Research 1"
+	name "Visit Mon Sook to find out about the Trin"
+	description "Visit <planet> to meet with a Hai scientist called Mon Sook, who wishes to talk to you about the Trin problem."
+	landing
+	to offer
+		has "Ask the Hai about the Trin: offered"
+	source
+		government "Hai"
+		near "Zuba Zub" 1 6
+	destination Giverstone
+		
+	on offer
+		conversation
+			`Offer conversation of Hai Research 1.`
+				accept
+			
+	on complete
+		set "hai vigilant: interested" # set in a branch
+		conversation
+			`Successful completion of Hai Research 1.`
+				accept	
+
+
+################
+# Trin Hunting #
+################	
+
+mission "Hai Vigilant Invitation"
+	landing
+	source
+		government "Hai"
+	to offer
+		has "Hai Research 1: done"
+		has "hai vigilant: interested"
+		"combat rating" > 8000
+		random < 30
+		
+	on offer
+		set "hai vigilant: member"
+		conversation
+			`Offer conversation of Hai Vigilant Invitation.`
+				decline	
+				
+
+mission "(Vigilant) Trin Hunting (Small Kagriri)"
+	name "Hunt down <npc>"
+	description "A Trin vessel designated <npc> has been raiding the Hai near the <system> system. The Quarg have been slow to react, and the Hai Vigilant are willing to pay you <payment> to destroy the ship and return to <planet>."
+	repeat
+	job
+	to offer
+		random < 8
+		"combat rating" > 8000
+		has "hai vigilant: member"
+	source
+		government "Hai"
+		
+	npc kill
+		government "Trin Bounty"
+		system
+			distance 1 3
+		personality heroic staying nemesis mute
+		fleet "Trin Kagriri Small"	
+		dialog "The <npc> has been eliminated. You can claim the Vigilant's bounty payment by returning to <destination>."
+		
+	on complete
+		payment 400000
+		"hai vigilant: experience" ++
+		dialog "Your contact within the Vigilant on <planet> gratefully pays you <payment> for eliminating the <npc>. As usual, you're thanked for your assistance in defending the Hai, and reminded not to let the Quarg know about this."
+
+		
+mission "(Vigilant) Trin Hunting (Small Destanu)"
+	name "Hunt down <npc>"
+	description "A Trin vessel designated <npc> has been raiding the Hai near the <system> system. The Quarg have been slow to react, and the Hai Vigilant are willing to pay you <payment> to destroy the ship and return to <planet>."
+	repeat
+	job
+	to offer
+		random < 8
+		"combat rating" > 8000
+		has "hai vigilant: member"
+	source
+		government "Hai"
+		
+	npc kill
+		government "Trin Bounty"
+		system
+			distance 1 3
+		personality heroic staying nemesis
+		fleet "Trin Destanu Small"	
+		dialog "The <npc> has been eliminated. You can claim the Vigilant's bounty payment by returning to <destination>."
+		
+	on complete
+		payment 400000
+		"hai vigilant: experience" ++
+		dialog "Your contact within the Vigilant on <planet> gratefully pays you <payment> for eliminating the <npc>. As usual, you're thanked for your assistance in defending the Hai, and reminded not to let the Quarg know about this."
+
+	
+mission "(Vigilant) Trin Hunting (Medium Kagriri)"
+	name "Hunt down <npc>"
+	description "A Trin vessel designated <npc>, leading a small fleet, has been raiding the Hai near the <system> system. The Quarg have been slow to react, and the Hai Vigilant are willing to pay you <payment> to destroy the ship and return to <planet>."
+	repeat
+	job
+	to offer
+		random < 6
+		"combat rating" > 22000
+		has "hai vigilant: member"
+		"hai vigilant: experience" >= 20
+	source
+		government "Hai"
+		
+	npc kill
+		government "Trin Bounty"
+		system
+			distance 1 3
+		personality heroic staying nemesis
+		fleet "Trin Kagriri Medium"		
+		dialog "The <npc> and their fleet have been eliminated. You can claim the Vigilant's bounty payment by returning to <destination>."
+		
+	on complete
+		payment 1000000
+		"hai vigilant: experience" ++
+		dialog "Your contact within the Vigilant on <planet> gratefully pays you <payment> for eliminating the <npc>. As usual, you're thanked for your assistance in defending the Hai, and reminded not to let the Quarg know about this."
+			
+	
+mission "(Vigilant) Trin Hunting (Medium Destanu)"
+	name "Hunt down <npc>"
+	description "A Trin vessel designated <npc>, leading a small fleet, has been raiding the Hai near the <system> system. The Quarg have been slow to react, and the Hai Vigilant are willing to pay you <payment> to destroy the ship and return to <planet>."
+	repeat
+	job
+	to offer
+		random < 6
+		"combat rating" > 22000
+		has "hai vigilant: member"
+		"hai vigilant: experience" >= 20
+	source
+		government "Hai"
+
+	npc kill
+		government "Trin Bounty"
+		system
+			distance 1 3
+		personality heroic staying nemesis
+		fleet "Trin Destanu Medium"			
+		dialog "The <npc> and their fleet have been eliminated. You can claim the Vigilant's bounty payment by returning to <destination>."
+		
+	on complete
+		payment 1000000
+		"hai vigilant: experience" ++
+		dialog "Your contact within the Vigilant on <planet> gratefully pays you <payment> for eliminating the <npc>. As usual, you're thanked for your assistance in defending the Hai, and reminded not to let the Quarg know about this."		
+
+		
+mission "(Vigilant) Trin Hunting (Large Kagriri)"
+	name "Hunt down <npc>"
+	description "A Trin vessel designated <npc>, leading a small fleet, has been raiding the Hai near the <system> system. The Quarg have been slow to react, and the Hai Vigilant are willing to pay you <payment> to destroy the ship and return to <planet>."
+	repeat
+	job
+	to offer
+		random < 4
+		"combat rating" > 22000
+		has "hai vigilant: member"
+		"hai vigilant: experience" >= 40
+	source
+		government "Hai"
+		
+	npc kill
+		government "Trin Bounty"
+		system
+			distance 1 3
+		personality heroic staying nemesis
+		fleet "Trin Kagriri Large"
+		dialog "The <npc> and their fleet have been eliminated. You can claim the Vigilant's bounty payment by returning to <destination>."
+		
+	on complete
+		payment 1400000
+		"hai vigilant: experience" ++
+		dialog "Your contact within the Vigilant on <planet> gratefully pays you <payment> for eliminating the <npc>. As usual, you're thanked for your assistance in defending the Hai, and reminded not to let the Quarg know about this."
+
+
+mission "(Vigilant) Trin Hunting (Large Destanu)"
+	name "Hunt down <npc>"
+	description "A Trin vessel designated <npc>, leading a small fleet, has been raiding the Hai near the <system> system. The Quarg have been slow to react, and the Hai Vigilant are willing to pay you <payment> to destroy the ship and return to <planet>."
+	repeat
+	job
+	to offer
+		random < 4
+		"combat rating" > 22000
+		has "hai vigilant: member"
+		"hai vigilant: experience" >= 40
+	source
+		government "Hai"
+		
+	npc kill
+		government "Trin Bounty"
+		system
+			distance 1 3
+		personality heroic staying nemesis
+		fleet "Trin Destanu Large"
+		dialog "The <npc> and their fleet have been eliminated. You can claim the Vigilant's bounty payment by returning to <destination>."
+		
+	on complete
+		payment 1400000
+		"hai vigilant: experience" ++
+		dialog "Your contact within the Vigilant on <planet> gratefully pays you <payment> for eliminating the <npc>. As usual, you're thanked for your assistance in defending the Hai, and reminded not to let the Quarg know about this."
+
+		
+##################
+# Hai Research 2 #
+##################		
+
+ship "Trin Piranha" "Trin Piranha (Uncapturable)"
+	"uncapturable"
+		
+mission "Hai Research 2"
+	name "Board a Disabled Trin Piranha"
+	description "The eccentric Hai researcher Mon Sook has asked you to locate and board a disabled Trin Piranha in the Waypoint system. Be aware, Quarg will likely be en route to destroy it."
+	to offer
+		has "Hai Research 1: done"
+		random < 25
+	source Giverstone
+	waypoint Waypoint
+		
+	on offer
+		conversation
+			scene "scene/piranha"
+			`Offer conversation.`
+				accept
+		
+	npc board
+		government "Trin"
+		system "Waypoint"
+		personality staying derelict
+		ship "Trin Piranha (Uncapturable)" "Vr/903 Keen"
+		conversation
+			`Boarding conversation.`
+			
+	npc
+		government "Quarg"
+		system "Arneb"
+		personality heroic forbearing vindictive murderous
+		"travel to" "Waypoint" (placeholder for future code feature, add staying once ready)
+		ship "Quarg Wardragon" "Quaromor"
+	
+	on complete
+		conversation
+			`Successful completion of Hai Research 2.`
+				accept	
+				
+	on fail
+		set "Hai Research 2: failed"
+	
+
+
+##################
+# Hai Research 3 #
+##################	
+
+mission "Hai Research 3"
+	name "Capture a Trin Piranha"
+	description "Capture a Trin Piranha somehow and bring it to Moon Sook on <planet> for investigation."
+	to offer
+		or
+			has "Hai Research 2: done"
+			has "Hai Research 2: failed"
+	source Giverstone
+		
+	on offer
+		conversation
+			`Offer conversation of Hai Research 3.`
+				accept
+		
+	
+	on complete
+		ship "Trin Piranha" -1
+		conversation
+			`Successful completion of Hai Research 3.`
+				accept	
+	
+
+###################
+# Quarg Interlude #
+###################	
+
+mission "Hai Research: Quarg Interlude"
+	name "Meet the Quarg about the Trin"
+	description "The Quarg have summoned you to <planet> in the <system> system, to talk about the Trin."
+	landing
+	to offer
+		has "Hai Research 3: done"
+	source
+		government Hai
+		near "Zuba Zub" 1 6
+	destination "Alta Hai"
+		
+	on offer
+		conversation
+			`Offer conversation for Quarg Interlude 1.`
+				accept
+				
+	on complete
+		conversation
+			`Successful completion of Quarg Interlude 1.`		
+
+			
+##################
+# Hai Research 4 #
+##################	
+
+
+#4: Travel to another system to pick up passengers to join the research team. (may offer repeating versions)
+
+Jumping fork:
+#5: Investigate a system (requires a Jump Drive) where Trin raids may originate from. (Will find nothing.)
+#6: Return to the system to place a sensor array.
+#7: Return to the Hai.
+#8: Scan a Trin Chimaera detected in aforementioned system.
+#9: Return and board the Trin Chimaera.
+
+Looting fork:
+#10: Loot a Trin Ramscoop and bring it for study.
+#11: Loot an Etheric Web and bring it for study.
+#12: Loot (another?!) Strangelet Cell and bring it for study.
+#13: Loot a Stasis Chamber and a Trin Shield Projector.
+#14: Loot any larger Strangelet reactor.
+#15: (after gap) Availability of Strangelet Adapters.
+
+
+
+#11: Board a mysteriously poorly armed Trin ship (a Cachalot) that may be a freighter, to work out why the Trin are occasionally sending ships not configured as warships to raid. Mission will end with the research team being shut down due to Quarg interference.
 
 
 ###############################################################################
