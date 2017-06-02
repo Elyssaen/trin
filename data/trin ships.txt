@@ -485,6 +485,7 @@ ship "Trin Chimaera"
 	gun 26 46 "Hunter-Killer Pod"
 	turret 0 -104 "Stasis Snare"
 	turret 0 12	
+	turret 0 0
 	explode "trin nuke explosion" 3
 	"final explode" "final explosion large"
 	description "The Trin Chimaera entered mass production in the Trin's last days as an answer to the Quarg. Chimaeras are heavy destroyers with devastating firepower and rapid shield regeneration, but their long-range capabilities are lacking. While their record against the Quarg is mixed, a single Chimaera can make short work of an entire fleet of less advanced ships."
