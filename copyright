@@ -4,7 +4,9 @@ Upstream-Contact: Simon Ridley <s.c.ridley@gmail.com>
 Source: https://github.com/Elyssaen/trin
 
 Files:
- images/ship/trin raja
+ images/ship/trin raja*
+ images/ship/trin marlin*
+ images/ship/trin chimaera*
 Copyright: Frederick Goy IV
 License: CC-BY-SA-4.0
 
