@@ -6,7 +6,7 @@
 # This ship is an illusion. In order to appear as 'Trin Chimaera', a false space is needed. 
 ship " Trin Chimaera "
 	plural "Trin Chimaeras"
-	sprite "ship/trin chimaera ghost"
+	sprite "ship/trin chimaera"
 	"never disabled"
 	"no swizzle"
 	attributes
@@ -349,6 +349,7 @@ ship "Trin Marlin"
 	"final explode" "final explosion medium"
 	description "Once used as everything from a courier to a patrol ship, the only Marlins seen anymore are those configured as light warships and harriers. This Marlin is able to run extremely overpowered engines, making it potentially one of the fastest ships in existence, while still having enough space for best-in-class versatility."
 
+	
 ship "Trin Marlin" "Trin Marlin (Fallen)"
 	crew 44
 	outfits
@@ -473,19 +474,19 @@ ship "Trin Chimaera"
 		"Trin Ramscoop"
 		"Shunt Drive"
 		
-	engine -60 80
-	engine -60 80
-	engine 60 80
-	engine 60 80
-	gun -26 -88 "Matrix Gun"
-	gun 26 -88 "Matrix Gun"
-	gun -40 -52 "Matrix Gun"
-	gun 40 -52 "Matrix Gun"
-	gun -26 46 "Hunter-Killer Pod"
-	gun 26 46 "Hunter-Killer Pod"
-	turret 0 -104 "Stasis Snare"
-	turret 0 12	
-	turret 0 0
+	engine -9 124 1
+	engine 9 124 1
+	engine -20 118 1
+	engine 20 118 1
+	gun -27 -96 "Matrix Gun"
+	gun 27 -96 "Matrix Gun"
+	gun -39 -76 "Matrix Gun"
+	gun 39 -76 "Matrix Gun"
+	gun -52 -86 "Hunter-Killer Pod"
+	gun 52 -86 "Hunter-Killer Pod"
+	turret 0 -108 "Stasis Snare"
+	turret 41 -39
+	turret -41 -39
 	explode "trin nuke explosion" 3
 	"final explode" "final explosion large"
 	description "The Trin Chimaera entered mass production in the Trin's last days as an answer to the Quarg. Chimaeras are heavy destroyers with devastating firepower and rapid shield regeneration, but their long-range capabilities are lacking. While their record against the Quarg is mixed, a single Chimaera can make short work of an entire fleet of less advanced ships."
