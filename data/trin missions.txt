@@ -1078,47 +1078,20 @@ Looting fork:
 # TRIN QUEEN                                                                  #
 ###############################################################################	
 
-mission "Trin Queen 1"
+#1: bring the Trin Queen a quantity of Trin Wellstone.
+mission "Assist the Surviving Trin 1"
 	name "Acquire 50 Trin Wellstone"
 	description ""
 	landing
 	to offer
-		has "Wanderers: Alpha Surveillance G: done"
-		has "tags: trin"
-		"Trin Queen Arc 1: offered" <= 2
+		and
+			has "Wanderers: Alpha Surveillance G: done"
+			has "tech: trin"
 	source "Avalon"	
 
 	on offer
 		conversation
-			`Avalon, the planet the Alphas made their stronghold, lies quiet. There is no sign left of the Alphas, and this ancient Earth-like world seems to hold no further interest to an explorer like yourself. Nonetheless, you have found yourself visiting this far-flung idyll.`
-			`	As you drop into the upper atmosphere of Avalon, a strange impression washes over you. More a feeling than language, the impression nonetheless seems to communicate ideas to you.`
-			`	<[Sister, kin]? [Come to, visit] [ME, HERE]>`
-			`	The impressions of 'me' or 'here' are intense for a moment, and within them is a clear sense of location: a position near the planet's north pole, a few hundred kilometres away. Then the impressions fade to a whisper; then, to silence.`
-			`	Something, or someone, is trying to communicate with you. And if you want to know more, you know exactly what course to plot.`
-			choice
-				`	(Fly to the location.)`
-					goto meet
-				`	(Ignore the voice.)`
-
-			label ignore
-			`Whatever might be trying to communicate with you, it doesn't matter. That's not why you came here. You ignore the impressions in your head, and they do not seem to return. Perhaps it was just your imagination.`
-			`	If you changed your mind, you might be able to fly by again another day.`
-
-			goto meet
-			`Your <ship> whizzes across oceans and tundras in minutes, your main thrusters and integrated repulsor engines making supersonic flight easy. The impressions in your head haven't repeated, but as you approach an icy northern continent you feel more and more sure of your sense of direction.`
-			`	Finally, you approach a plain of pink snow, and at the heart of it a muddy lake set in a crater. Somehow, it hasn't frozen over: your sensors identify a significant source of heat below, but not from anything like a geyser.`
-			`	When the voice appears again in your head, this time it's in your own language.`
-			`	"You are… not of my kin. Is this your speech? That of the previous visitors?"`
-			`	You confirm that the voice is indeed speaking your language, and remarkably well. "Previous visitors? Do you mean the Alphas?"`
-			`	"Alphas. Yes. They were similar to you, although different. Are you their friend?"`
-			choice
-				`	"The Alphas are dangerous. I drove them off this world."`
-				`	"No, the Alphas are dangerous."`
-				`	"Yes, they are friends of mine."`
-					goto alphafriend
-				`	"I don't really know anything about them."`
-				
-
+			`Placeholder.`
 			
 	on accept
 		conversation

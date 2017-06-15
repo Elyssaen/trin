@@ -262,6 +262,8 @@ outfit "Stasis Snare"
 	weapon
 		sprite "projectile/stasis snare"
 			"frame rate" 15
+		"hardpoint sprite" "hardpoint/plasma turret"
+		"hardpoint offset" 15.
 		sound "ion small"
 		"inaccuracy" 1
 		"velocity" 420
@@ -288,6 +290,8 @@ outfit "Phase Reaper Turret"
 	"turret mounts" -1
 	weapon
 		sprite "projectile/phase reaper"
+		"hardpoint sprite" "hardpoint/repeater turret"
+		"hardpoint offset" 7.
 		sound "tracker"
 		"hit effect" "piercer impact"
 		"hit effect" "particle impact"
@@ -404,6 +408,8 @@ outfit "Wakefield Mortar"
 	"required crew" 1
 	weapon
 		sprite "projectile/wakefield mortar"
+		"hardpoint sprite" "hardpoint/slicer turret"
+		"hardpoint offset" 17.
 		sound "piercer"
 		"hit effect" "piercer impact"
 		"hit effect" "piercer explosion"
@@ -445,6 +451,8 @@ outfit "Matrix Battery"
 	weapon
 		sprite "projectile/matrix1"
 		sound "proton"
+		"hardpoint sprite" "hardpoint/pulse turret"
+		"hardpoint offset" 7.
 		"hit effect" "large matrix explosion"
 		"submunition" "Matrix Bolt 1" 1
 		"lifetime" 12
@@ -455,6 +463,8 @@ outfit "Matrix Battery"
 		"firing heat" 120
 		"shield damage" 0
 		"hull damage" 0
+		"turret turn" 2
+		"firing arc" 180
 	description "These giant Matrix Batteries mount the withering firepower of three Matrix Guns. Unfortunately, without a stable gun port they are nowhere near as accurate, and limiters have had to be installed to dampen the damage at the shortest ranges. Without them, Matrix Batteries would occasionally destroy themselves."
 	
 ###############################################################################

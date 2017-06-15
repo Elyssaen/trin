@@ -8,7 +8,7 @@ ship " Trin Chimaera "
 	plural "Trin Chimaeras"
 	sprite "ship/trin chimaera"
 	"never disabled"
-	"no swizzle"
+	swizzle 0
 	attributes
 		category "Drone"
 		tags alien trin 
@@ -70,7 +70,7 @@ ship " Trin Mobula "
 	plural "Trin Mobulas"
 	sprite "ship/trin mobula ghost"
 	"never disabled"
-	"no swizzle"
+	swizzle 0
 	attributes
 		category "Drone"
 		tags alien trin 
@@ -138,7 +138,7 @@ ship "Trin Piranha"
 	sprite "ship/trin piranha"
 		"frame rate" 20
 		rewind
-	"no swizzle"
+	swizzle 0
 	attributes
 		category "Fighter"
 		tags alien trin
@@ -192,7 +192,7 @@ ship "Trin Raja"
 	sprite "ship/trin raja"
 		"frame rate" 15
 		rewind
-	"no swizzle"
+	swizzle 0
 	attributes
 		category "Interceptor"
 		tags alien trin
@@ -301,7 +301,7 @@ ship "Trin Marlin"
 	sprite "ship/trin marlin"
 		"frame rate" 12
 		rewind
-	"no swizzle"
+	swizzle 0
 	attributes
 		category "Light Warship"
 		tags alien trin warship
@@ -433,7 +433,7 @@ ship "Trin Chimaera"
 	sprite "ship/trin chimaera"
 		"frame rate" 12
 		rewind	
-	"no swizzle"
+	swizzle 0
 	attributes
 		category "Medium Warship"
 		tags alien trin warship
@@ -533,6 +533,7 @@ ship "Trin Chimaera" "Trin Chimaera (Killer)"
 		"Stasis Chamber" 3
 		"Trin Shield Projector" 91
 
+# Not for use beyond testing.
 ship "Trin Chimaera" "Trin Chimaera (Killer II)"
 	crew 91
 	outfits
@@ -661,8 +662,10 @@ ship "Trin Chimaera" "Trin Chimaera (Ghosting)"
 ###############################################################################
 		
 ship "Trin Mako"
-	sprite "ship/trin mako ghost"
-	"no swizzle"
+	sprite "ship/trin mako"
+		"frame rate" 15
+		rewind
+	swizzle 0
 	attributes
 		category "Heavy Warship"
 		tags alien trin warship
@@ -703,23 +706,23 @@ ship "Trin Mako"
 		"Trin Ramscoop"
 		"Shunt Drive"
 	
-	engine 0 222 0.9
-	engine 60 120 0.6
-	engine -60 120 0.6
-	gun -34 -143 "Hunter-Seeker Pod"
-	gun 34 -143 "Hunter-Seeker Pod"
-	gun -8 -145 "Hunter-Seeker Pod"
-	gun 8 -145 "Hunter-Seeker Pod"
-	turret 0 -70
-	turret 0 -45
-	turret 0 -20
-	turret 0 60 "Matrix Battery"
-	fighter -50 100
-	fighter 50 100
-	fighter -75 100
-	fighter 75 100
-	fighter -100 100
-	fighter -100 100
+	engine 0 222 1
+	engine 36 196 0.6
+	engine -36 196 0.6
+	gun -53 -91 "Hunter-Seeker Pod"
+	gun 53 -91 "Hunter-Seeker Pod"
+	gun -75 -82 "Hunter-Seeker Pod"
+	gun 75 -82 "Hunter-Seeker Pod"
+	turret 0 -95 "Matrix Battery"
+	turret -40 -45
+	turret 40 -45
+	turret 0 -6
+	fighter 0 -160
+	fighter 0 -160
+	fighter 0 -160
+	fighter 0 -160
+	fighter 0 -160
+	fighter 0 -160
 	explode "trin nuke explosion" 3
 	"final explode" "final explosion large"
 	description "The long-serving Mako has been used by the Trin since they first discovered the hyperdrive. While usually configured today as an escort carrier and patrol cruiser, earlier generations have been explorers, blockade runners and even cruise ships. The Mako doesn't have the most advanced shielding and is underpowered for a Trin warship, but it's surprisingly fast for a carrier and can support a squadron of Piranhas."
@@ -817,7 +820,7 @@ ship "Trin Mako" "Trin Mako (Trapper)"
 	
 ship "Trin Antiarch"
 	sprite "ship/trin antiarch ghost"
-	"no swizzle"
+	swizzle 0
 	attributes
 		category "Heavy Warship"
 		tags alien trin warship
@@ -934,7 +937,7 @@ ship "Trin Antiarch" "Trin Antiarch (Close)"
 
 ship "Trin Mobula"
 	sprite "ship/trin mobula ghost"
-	"no swizzle"
+	swizzle 0
 	attributes
 		category "Heavy Warship"
 		tags alien trin warship
@@ -1061,7 +1064,7 @@ ship "Trin Mobula" "Trin Mobula (Warp)"
 
 ship "Trin Cachalot"
 	sprite "ship/trin cachalot ghost"
-	"no swizzle"
+	swizzle 0
 	attributes
 		category "Heavy Freighter"
 		tags alien trin freighter
